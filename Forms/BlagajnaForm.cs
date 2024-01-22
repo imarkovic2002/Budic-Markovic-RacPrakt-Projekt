@@ -17,5 +17,10 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

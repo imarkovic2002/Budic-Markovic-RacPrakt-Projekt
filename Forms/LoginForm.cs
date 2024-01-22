@@ -19,11 +19,11 @@ namespace Budić_Marković_RacPrakt_Projekt
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //bool AutorizirajDjelatnika;
 
             string username = txtUsername.Text;
             string password = txtPassword.Text;
@@ -48,7 +48,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                         MessageBox.Show("Pogrešno korisničko ime ili lozinka.");
                     }
                 }
-            } 
+            }
         }
         
         private void OpenFormBasedOnRole(string role)
