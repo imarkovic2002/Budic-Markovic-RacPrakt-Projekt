@@ -84,12 +84,6 @@
     <Compile Include="Forms\BlagajnaForm.Designer.cs">
       <DependentUpon>BlagajnaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DjelatnikForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DjelatnikForm.Designer.cs">
-      <DependentUpon>DjelatnikForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BlagajnaForm.resx">
       <DependentUpon>BlagajnaForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DjelatnikForm.resx">
-      <DependentUpon>DjelatnikForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

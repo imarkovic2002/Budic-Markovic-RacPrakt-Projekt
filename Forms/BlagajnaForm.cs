@@ -22,5 +22,15 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             this.Close();
         }
+
+        private void BlagajnaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnČokolada_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

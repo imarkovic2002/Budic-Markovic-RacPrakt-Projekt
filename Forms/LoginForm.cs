@@ -27,48 +27,56 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-
+            Djelatnik djelatnik = new Djelatnik();
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
-                string query = "SELECT role FROM djelatnik WHERE email = @username AND lozinka = @Password";
+                string query = "SELECT * FROM djelatnik WHERE email = @username AND lozinka = @Password";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Username", username);
                     command.Parameters.AddWithValue("@Password", password);
-
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
+                   
+                    using (var reader = command.ExecuteReader())
                     {
-                        string role = result.ToString();
-                        OpenFormBasedOnRole(role);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Pogrešno korisničko ime ili lozinka.");
+
+                        while (reader.Read())
+                        {
+                           
+
+                            if (reader != null)
+                            {
+                                
+                                djelatnik.Ime = reader.GetString("ime");
+                                djelatnik.Prezime = reader.GetString("prezime");
+                                djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
+                                djelatnik.OIB = reader.GetString("oib");
+                                djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
+                                djelatnik.Email = reader.GetString("email");
+                                djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
+                                djelatnik.Role = reader.GetString("role");
+
+
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Pogrešno korisničko ime ili lozinka.");
+                            }
+                        }
                     }
                 }
             }
+            AdminForm adminForm = new AdminForm(djelatnik);
+             adminForm.Show();
+            
         }
         
-        private void OpenFormBasedOnRole(string role)
+       
+
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            switch (role.ToLower())
-            {
-                case "admin":
-                    AdminForm adminForm = new AdminForm();
-                    adminForm.Show();
-                    break;
 
-                case "blagajnik":
-                    DjelatnikForm djelatnikForm = new DjelatnikForm();
-                    djelatnikForm.Show();
-                    break;
-
-                default:
-                    MessageBox.Show("Nepoznata uloga korisnika,");
-                    break;
-            }
         }
     }        
 }

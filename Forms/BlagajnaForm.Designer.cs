@@ -58,6 +58,7 @@
             this.btnČokolada.TabIndex = 0;
             this.btnČokolada.Text = "Čokolada";
             this.btnČokolada.UseVisualStyleBackColor = false;
+            this.btnČokolada.Click += new System.EventHandler(this.btnČokolada_Click);
             // 
             // btnSok1
             // 
@@ -256,6 +257,7 @@
             this.Controls.Add(this.btnČokolada);
             this.Name = "BlagajnaForm";
             this.Text = "BlagajnaForm";
+            this.Load += new System.EventHandler(this.BlagajnaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
