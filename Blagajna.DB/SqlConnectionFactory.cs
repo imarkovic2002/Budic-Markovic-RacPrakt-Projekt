@@ -1,6 +1,6 @@
-﻿using MySqlConnector;
-using System;
+﻿using System;
 using System.Configuration;
+using MySqlConnector;
 
 namespace Blagajna.DB
 {

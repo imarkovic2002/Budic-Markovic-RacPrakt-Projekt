@@ -1,5 +1,7 @@
 ﻿using Blagajna.Abstract.Models;
 using Blagajna.DB;
+using Blagajna.DB.Stores;
+using Budić_Marković_RacPrakt_Projekt.Forms;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
@@ -17,11 +19,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Budić_Marković_RacPrakt_Projekt
 {
-    public partial class AdminForm : Form
+    public partial class DjelatnikForm : Form
     {
         private SqlConnectionFactory connectionFactory;
+        private ProizvodStore _proizvodStore;
 
-        public AdminForm(Djelatnik djelatnik)
+        public DjelatnikForm(Djelatnik djelatnik)
         {
             InitializeComponent();
             connectionFactory = new SqlConnectionFactory();
@@ -30,10 +33,13 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
             dgPromet.DataSource = getTransakcije();
-            dgSkladiste.DataSource = getProizvods();
             dgDjelatnici.DataSource = getDjelatnici();
             OpenFormBasedOnRole(djelatnik);
+            if (_proizvodStore == null)
+                _proizvodStore = new ProizvodStore();
 
+            var proizvodi = _proizvodStore.getProizvods();
+            dgSkladiste.DataSource = proizvodi;
 
 
         }
@@ -41,6 +47,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         private void lblBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnBlagajna_Click(object sender, EventArgs e)
@@ -49,10 +56,6 @@ namespace Budić_Marković_RacPrakt_Projekt
             blagajnaForm.ShowDialog();
         }
 
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void OpenFormBasedOnRole(Djelatnik djelatnik)
         {
 
@@ -116,38 +119,7 @@ namespace Budić_Marković_RacPrakt_Projekt
             }
             return tranksakcija;
         }
-        List<Proizvod> getProizvods()
-        {
-            List<Proizvod> proizvodi = new List<Proizvod>();
-            using (MySqlConnection connection = connectionFactory.GetNewConnection())
-            {
-                string query = "SELECT id,naziv,kolicina,cijena FROM proizvod";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
 
-
-                    using (var reader = command.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-                            Proizvod proizvod = new Proizvod();
-                            proizvod.ID = reader.GetInt32("id");
-                            proizvod.naziv = reader.GetString("naziv");
-                            proizvod.kolicina = reader.GetString("kolicina");
-                            proizvod.cijena = reader.GetFloat("cijena");
-                            proizvodi.Add(proizvod);
-
-
-                        }
-                    }
-                }
-                return proizvodi;
-            }
-           
-
-
-            }
         List<Djelatnik> getDjelatnici()
         {
             List<Djelatnik> djelatnici = new List<Djelatnik>();
@@ -181,16 +153,43 @@ namespace Budić_Marković_RacPrakt_Projekt
                         }
                     }
                 }
-
-
-
-
-
-
                 return djelatnici;
             }
         }
 
+        private void btnDeleteProizvod_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
+                int selectedId = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["ID"].Value);
+                _proizvodStore.ObrisiProizvod(selectedId);
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
+        }
 
+        private void lblNoviProizvod_Click(object sender, EventArgs e)
+        {
+            AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(new Proizvod());
+            if(addEditProizvodForm.ShowDialog() == DialogResult.OK)
+            {
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
+        }
+
+        private void btnAzuriraj_Click(object sender, EventArgs e)
+        {
+            Proizvod proizvod= new Proizvod();
+
+           // proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
+            proizvod.naziv= dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
+            proizvod.cijena= dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
+            proizvod.kolicina= dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
+
+            AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(proizvod);
+
+            if (addEditProizvodForm.ShowDialog() == DialogResult.OK)
+            {
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
+        }
     }
 }

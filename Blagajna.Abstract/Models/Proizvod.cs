@@ -13,7 +13,7 @@ namespace Blagajna.Abstract.Models
         public string naziv {  get; set; }
         public string kolicina {  get; set; }
 
-        public float cijena {  get; set; }
+        public string cijena {  get; set; }
 
     }
 }

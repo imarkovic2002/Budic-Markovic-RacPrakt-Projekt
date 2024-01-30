@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Budić_Marković_RacPrakt_Projekt</RootNamespace>
     <AssemblyName>Budić-Marković-RacPrakt-Projekt</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,17 +73,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AdminForm.cs">
+    <Compile Include="Forms\AddEditProizvodForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="Forms\AddEditProizvodForm.Designer.cs">
+      <DependentUpon>AddEditProizvodForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BlagajnaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\BlagajnaForm.Designer.cs">
       <DependentUpon>BlagajnaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DjelatnikForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DjelatnikForm.Designer.cs">
+      <DependentUpon>DjelatnikForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -98,11 +105,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddEditProizvodForm.resx">
+      <DependentUpon>AddEditProizvodForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BlagajnaForm.resx">
-      <DependentUpon>BlagajnaForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DjelatnikForm.resx">
+      <DependentUpon>DjelatnikForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

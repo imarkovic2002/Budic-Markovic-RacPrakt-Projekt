@@ -67,7 +67,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                     }
                 }
             }
-            AdminForm adminForm = new AdminForm(djelatnik);
+            DjelatnikForm adminForm = new DjelatnikForm(djelatnik);
              adminForm.Show();
             
         }
