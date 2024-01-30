@@ -30,8 +30,10 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
             dgPromet.DataSource = getTransakcije();
+            dgSkladiste.DataSource = getProizvods();
+            dgDjelatnici.DataSource = getDjelatnici();
             OpenFormBasedOnRole(djelatnik);
-          
+
 
 
         }
@@ -51,18 +53,18 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
 
         }
-      private void OpenFormBasedOnRole(Djelatnik djelatnik)
+        private void OpenFormBasedOnRole(Djelatnik djelatnik)
         {
-   
+
             switch (djelatnik.Role.ToLower())
             {
                 case "admin":
 
-                    foreach(TabPage tabPage in tabAdmin.TabPages)
-    {
+                    foreach (TabPage tabPage in tabAdmin.TabPages)
+                    {
                         tabPage.Visible = true;
                     }
-                    lblAdmin.Text = "Admin "  + djelatnik.Ime + " " + djelatnik.Prezime;
+                    lblAdmin.Text = "Admin " + djelatnik.Ime + " " + djelatnik.Prezime;
                     break;
 
                 case "blagajnik":
@@ -84,15 +86,18 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
 
         }
+
         List<Transakcija> getTransakcije()
         {
             List<Transakcija> tranksakcija = new List<Transakcija>();
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
-                string query = "SELECT DATE_FORMAT(datum_transakcije, '%Y-%m-%d') AS datum_transakcije, SUM(ukupni_iznos) AS UkupniIznosKupnje\r\nFROM transakcija\r\nGROUP BY DATE_FORMAT(datum_transakcije, '%Y-%m-%d')\r\nORDER BY datum_transakcije;\r\n";
+                string query = "SELECT DATE_FORMAT(datum_transakcije, '%Y-%m-%d') AS datum_transakcije," +
+                    " SUM(ukupni_iznos) AS UkupniIznosKupnje\r\nFROM transakcija\r\nGROUP BY DATE_FORMAT(datum_transakcije," +
+                    " '%Y-%m-%d')\r\nORDER BY datum_transakcije;\r\n";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                   
+
 
                     using (var reader = command.ExecuteReader())
                     {
@@ -111,6 +116,81 @@ namespace Budić_Marković_RacPrakt_Projekt
             }
             return tranksakcija;
         }
-        
+        List<Proizvod> getProizvods()
+        {
+            List<Proizvod> proizvodi = new List<Proizvod>();
+            using (MySqlConnection connection = connectionFactory.GetNewConnection())
+            {
+                string query = "SELECT id,naziv,kolicina,cijena FROM proizvod";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            Proizvod proizvod = new Proizvod();
+                            proizvod.ID = reader.GetInt32("id");
+                            proizvod.naziv = reader.GetString("naziv");
+                            proizvod.kolicina = reader.GetString("kolicina");
+                            proizvod.cijena = reader.GetFloat("cijena");
+                            proizvodi.Add(proizvod);
+
+
+                        }
+                    }
+                }
+                return proizvodi;
+            }
+           
+
+
+            }
+        List<Djelatnik> getDjelatnici()
+        {
+            List<Djelatnik> djelatnici = new List<Djelatnik>();
+            using (MySqlConnection connection = connectionFactory.GetNewConnection())
+            {
+                string query = "SELECT * FROM  djelatnik";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            Djelatnik djelatnik = new Djelatnik();
+                            djelatnik.ID = reader.GetInt32("id");
+                            djelatnik.Ime = reader.GetString("ime");
+                            djelatnik.Prezime = reader.GetString("prezime");
+                            djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
+                            djelatnik.OIB = reader.GetString("oib");
+                            djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
+                            djelatnik.Email = reader.GetString("email");
+                            djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
+                            djelatnik.Role = reader.GetString("role");
+                            djelatnici.Add(djelatnik);
+
+
+
+                        }
+                    }
+                }
+
+
+
+
+
+
+                return djelatnici;
+            }
+        }
+
+
     }
 }

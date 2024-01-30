@@ -33,6 +33,7 @@
             this.lblBack = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
             this.Promet = new System.Windows.Forms.TabPage();
+            this.dgPromet = new System.Windows.Forms.DataGridView();
             this.Blagajna = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -48,11 +49,16 @@
             this.btnČokolada = new System.Windows.Forms.Button();
             this.Djelatnici = new System.Windows.Forms.TabPage();
             this.Skladiste = new System.Windows.Forms.TabPage();
-            this.dgPromet = new System.Windows.Forms.DataGridView();
+            this.dgSkladiste = new System.Windows.Forms.DataGridView();
+            this.dgDjelatnici = new System.Windows.Forms.DataGridView();
             this.tabAdmin.SuspendLayout();
             this.Promet.SuspendLayout();
-            this.Blagajna.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
+            this.Blagajna.SuspendLayout();
+            this.Djelatnici.SuspendLayout();
+            this.Skladiste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -97,6 +103,16 @@
             this.Promet.Text = "Promet";
             this.Promet.UseVisualStyleBackColor = true;
             this.Promet.Click += new System.EventHandler(this.Promet_Click);
+            // 
+            // dgPromet
+            // 
+            this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPromet.Location = new System.Drawing.Point(64, 35);
+            this.dgPromet.Name = "dgPromet";
+            this.dgPromet.RowHeadersWidth = 51;
+            this.dgPromet.RowTemplate.Height = 24;
+            this.dgPromet.Size = new System.Drawing.Size(669, 200);
+            this.dgPromet.TabIndex = 0;
             // 
             // Blagajna
             // 
@@ -290,6 +306,7 @@
             // 
             // Djelatnici
             // 
+            this.Djelatnici.Controls.Add(this.dgDjelatnici);
             this.Djelatnici.Location = new System.Drawing.Point(4, 25);
             this.Djelatnici.Name = "Djelatnici";
             this.Djelatnici.Padding = new System.Windows.Forms.Padding(3);
@@ -300,6 +317,7 @@
             // 
             // Skladiste
             // 
+            this.Skladiste.Controls.Add(this.dgSkladiste);
             this.Skladiste.Location = new System.Drawing.Point(4, 25);
             this.Skladiste.Name = "Skladiste";
             this.Skladiste.Padding = new System.Windows.Forms.Padding(3);
@@ -308,15 +326,27 @@
             this.Skladiste.Text = "Skladište";
             this.Skladiste.UseVisualStyleBackColor = true;
             // 
-            // dgPromet
+            // dgSkladiste
             // 
-            this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPromet.Location = new System.Drawing.Point(64, 35);
-            this.dgPromet.Name = "dgPromet";
-            this.dgPromet.RowHeadersWidth = 51;
-            this.dgPromet.RowTemplate.Height = 24;
-            this.dgPromet.Size = new System.Drawing.Size(669, 200);
-            this.dgPromet.TabIndex = 0;
+            this.dgSkladiste.AllowUserToOrderColumns = true;
+            this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSkladiste.Location = new System.Drawing.Point(-4, 0);
+            this.dgSkladiste.Name = "dgSkladiste";
+            this.dgSkladiste.RowHeadersWidth = 51;
+            this.dgSkladiste.RowTemplate.Height = 24;
+            this.dgSkladiste.Size = new System.Drawing.Size(766, 318);
+            this.dgSkladiste.TabIndex = 0;
+            // 
+            // dgDjelatnici
+            // 
+            this.dgDjelatnici.AllowUserToOrderColumns = true;
+            this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDjelatnici.Location = new System.Drawing.Point(4, 7);
+            this.dgDjelatnici.Name = "dgDjelatnici";
+            this.dgDjelatnici.RowHeadersWidth = 51;
+            this.dgDjelatnici.RowTemplate.Height = 24;
+            this.dgDjelatnici.Size = new System.Drawing.Size(758, 304);
+            this.dgDjelatnici.TabIndex = 0;
             // 
             // AdminForm
             // 
@@ -331,8 +361,12 @@
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.tabAdmin.ResumeLayout(false);
             this.Promet.ResumeLayout(false);
-            this.Blagajna.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).EndInit();
+            this.Blagajna.ResumeLayout(false);
+            this.Djelatnici.ResumeLayout(false);
+            this.Skladiste.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +394,7 @@
         private System.Windows.Forms.Button btnSok1;
         private System.Windows.Forms.Button btnČokolada;
         private System.Windows.Forms.DataGridView dgPromet;
+        private System.Windows.Forms.DataGridView dgSkladiste;
+        private System.Windows.Forms.DataGridView dgDjelatnici;
     }
 }
