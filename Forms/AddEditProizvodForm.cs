@@ -22,27 +22,27 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             InitializeComponent();
 
             if(_proizvodStore == null)
-            {
+            
                 _proizvodStore = new ProizvodStore();
 
-                if (proizvod != null & proizvod.ID != 0)
-                {
-                    //Ažuriranje
-                    this.Text = "Ažuriraj podatak";
-                    btnSave.Text = "Ažuriraj";
+            if (proizvod != null & proizvod.ID != 0)
+            {
+                //Ažuriranje
+                this.Text = "Ažuriraj podatak";
+                btnSave.Text = "Ažuriraj";
 
-                    txtNaziv.Text = proizvod.naziv;
-                    txtCijena.Text = proizvod.cijena;
-                    txtKolicina.Text = proizvod.kolicina;
-                    Proizvod_Id = proizvod.ID;
-                }
-                else
-                {
-                    //dodavanje
-                    this.Text = "Novi proizvod";
-                    btnSave.Text = "Dodaj";
-                }
+                txtNaziv.Text = proizvod.naziv;
+                txtCijena.Text = proizvod.cijena;
+                txtKolicina.Text = proizvod.kolicina;
+                Proizvod_Id = proizvod.ID;
             }
+            else
+            {
+                //dodavanje
+                this.Text = "Novi proizvod";
+                btnSave.Text = "Dodaj";
+            }
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

@@ -179,7 +179,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             Proizvod proizvod= new Proizvod();
 
-           // proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
+            proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
             proizvod.naziv= dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
             proizvod.cijena= dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
             proizvod.kolicina= dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
