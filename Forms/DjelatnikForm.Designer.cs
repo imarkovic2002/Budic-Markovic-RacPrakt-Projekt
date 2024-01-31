@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
@@ -48,6 +54,9 @@
             this.btnSok1 = new System.Windows.Forms.Button();
             this.btnČokolada = new System.Windows.Forms.Button();
             this.Djelatnici = new System.Windows.Forms.TabPage();
+            this.btnAzurirajDjelatnika = new System.Windows.Forms.Button();
+            this.btnNoviDjelatnik = new System.Windows.Forms.Button();
+            this.btnObrisiDjelatnika = new System.Windows.Forms.Button();
             this.dgDjelatnici = new System.Windows.Forms.DataGridView();
             this.Skladiste = new System.Windows.Forms.TabPage();
             this.btnAzuriraj = new System.Windows.Forms.Button();
@@ -55,9 +64,10 @@
             this.btnDeleteProizvod = new System.Windows.Forms.Button();
             this.dgSkladiste = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnAzurirajKorisnika = new System.Windows.Forms.Button();
-            this.btnNoviKorisnik = new System.Windows.Forms.Button();
-            this.btnObrisiKorisnika = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolsNoviProizvod = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsAzuriraj = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAdmin.SuspendLayout();
             this.Promet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
@@ -66,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).BeginInit();
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -81,7 +92,7 @@
             // 
             this.lblExit.BackColor = System.Drawing.Color.OrangeRed;
             this.lblExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblExit.Location = new System.Drawing.Point(695, 402);
+            this.lblExit.Location = new System.Drawing.Point(693, 402);
             this.lblExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(93, 36);
@@ -111,7 +122,7 @@
             this.Promet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Promet.Name = "Promet";
             this.Promet.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Promet.Size = new System.Drawing.Size(763, 314);
+            this.Promet.Size = new System.Drawing.Size(763, 304);
             this.Promet.TabIndex = 0;
             this.Promet.Text = "Promet";
             this.Promet.UseVisualStyleBackColor = true;
@@ -119,7 +130,23 @@
             // 
             // dgPromet
             // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle28;
             this.dgPromet.Location = new System.Drawing.Point(64, 34);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgPromet.Name = "dgPromet";
@@ -146,7 +173,7 @@
             this.Blagajna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Blagajna.Name = "Blagajna";
             this.Blagajna.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Blagajna.Size = new System.Drawing.Size(763, 314);
+            this.Blagajna.Size = new System.Drawing.Size(763, 304);
             this.Blagajna.TabIndex = 1;
             this.Blagajna.Text = "Blagajna";
             this.Blagajna.UseVisualStyleBackColor = true;
@@ -333,9 +360,9 @@
             // 
             // Djelatnici
             // 
-            this.Djelatnici.Controls.Add(this.btnAzurirajKorisnika);
-            this.Djelatnici.Controls.Add(this.btnNoviKorisnik);
-            this.Djelatnici.Controls.Add(this.btnObrisiKorisnika);
+            this.Djelatnici.Controls.Add(this.btnAzurirajDjelatnika);
+            this.Djelatnici.Controls.Add(this.btnNoviDjelatnik);
+            this.Djelatnici.Controls.Add(this.btnObrisiDjelatnika);
             this.Djelatnici.Controls.Add(this.dgDjelatnici);
             this.Djelatnici.Location = new System.Drawing.Point(4, 25);
             this.Djelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -346,16 +373,71 @@
             this.Djelatnici.Text = "Djelatnici";
             this.Djelatnici.UseVisualStyleBackColor = true;
             // 
+            // btnAzurirajDjelatnika
+            // 
+            this.btnAzurirajDjelatnika.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAzurirajDjelatnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAzurirajDjelatnika.Location = new System.Drawing.Point(211, 247);
+            this.btnAzurirajDjelatnika.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAzurirajDjelatnika.Name = "btnAzurirajDjelatnika";
+            this.btnAzurirajDjelatnika.Size = new System.Drawing.Size(96, 54);
+            this.btnAzurirajDjelatnika.TabIndex = 16;
+            this.btnAzurirajDjelatnika.Text = "Ažuriraj Korisnika";
+            this.btnAzurirajDjelatnika.UseVisualStyleBackColor = false;
+            this.btnAzurirajDjelatnika.Click += new System.EventHandler(this.btnAzurirajKorisnika_Click);
+            // 
+            // btnNoviDjelatnik
+            // 
+            this.btnNoviDjelatnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNoviDjelatnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNoviDjelatnik.Location = new System.Drawing.Point(7, 247);
+            this.btnNoviDjelatnik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNoviDjelatnik.Name = "btnNoviDjelatnik";
+            this.btnNoviDjelatnik.Size = new System.Drawing.Size(96, 54);
+            this.btnNoviDjelatnik.TabIndex = 14;
+            this.btnNoviDjelatnik.Text = "Novi djelatnik";
+            this.btnNoviDjelatnik.UseVisualStyleBackColor = false;
+            this.btnNoviDjelatnik.Click += new System.EventHandler(this.btnNoviKorisnik_Click);
+            // 
+            // btnObrisiDjelatnika
+            // 
+            this.btnObrisiDjelatnika.BackColor = System.Drawing.Color.Red;
+            this.btnObrisiDjelatnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObrisiDjelatnika.Location = new System.Drawing.Point(109, 247);
+            this.btnObrisiDjelatnika.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnObrisiDjelatnika.Name = "btnObrisiDjelatnika";
+            this.btnObrisiDjelatnika.Size = new System.Drawing.Size(96, 54);
+            this.btnObrisiDjelatnika.TabIndex = 15;
+            this.btnObrisiDjelatnika.Text = "Obriši djelatnika";
+            this.btnObrisiDjelatnika.UseVisualStyleBackColor = false;
+            this.btnObrisiDjelatnika.Click += new System.EventHandler(this.btnObrisiKorisnika_Click);
+            // 
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDjelatnici.Location = new System.Drawing.Point(7, -4);
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle30;
+            this.dgDjelatnici.Location = new System.Drawing.Point(11, 4);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgDjelatnici.Name = "dgDjelatnici";
             this.dgDjelatnici.RowHeadersWidth = 51;
             this.dgDjelatnici.RowTemplate.Height = 24;
-            this.dgDjelatnici.Size = new System.Drawing.Size(757, 247);
+            this.dgDjelatnici.Size = new System.Drawing.Size(653, 243);
             this.dgDjelatnici.TabIndex = 0;
             // 
             // Skladiste
@@ -364,6 +446,7 @@
             this.Skladiste.Controls.Add(this.lblNoviProizvod);
             this.Skladiste.Controls.Add(this.btnDeleteProizvod);
             this.Skladiste.Controls.Add(this.dgSkladiste);
+            this.Skladiste.Controls.Add(this.menuStrip1);
             this.Skladiste.Location = new System.Drawing.Point(4, 25);
             this.Skladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Skladiste.Name = "Skladiste";
@@ -415,20 +498,36 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSkladiste.Location = new System.Drawing.Point(-5, 0);
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dgSkladiste.Location = new System.Drawing.Point(0, 48);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgSkladiste.Name = "dgSkladiste";
             this.dgSkladiste.RowHeadersWidth = 51;
             this.dgSkladiste.RowTemplate.Height = 24;
-            this.dgSkladiste.Size = new System.Drawing.Size(767, 242);
+            this.dgSkladiste.Size = new System.Drawing.Size(763, 194);
             this.dgSkladiste.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(597, 402);
+            this.button1.Location = new System.Drawing.Point(595, 402);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 36);
@@ -436,44 +535,39 @@
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnAzurirajKorisnika
+            // menuStrip1
             // 
-            this.btnAzurirajKorisnika.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAzurirajKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAzurirajKorisnika.Location = new System.Drawing.Point(211, 247);
-            this.btnAzurirajKorisnika.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAzurirajKorisnika.Name = "btnAzurirajKorisnika";
-            this.btnAzurirajKorisnika.Size = new System.Drawing.Size(96, 54);
-            this.btnAzurirajKorisnika.TabIndex = 16;
-            this.btnAzurirajKorisnika.Text = "Ažuriraj Korisnika";
-            this.btnAzurirajKorisnika.UseVisualStyleBackColor = false;
-            this.btnAzurirajKorisnika.Click += new System.EventHandler(this.btnAzurirajKorisnika_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsNoviProizvod,
+            this.toolsAzuriraj,
+            this.toolSObrisiProizvod});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 2);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(757, 28);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnNoviKorisnik
+            // toolsNoviProizvod
             // 
-            this.btnNoviKorisnik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNoviKorisnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNoviKorisnik.Location = new System.Drawing.Point(7, 247);
-            this.btnNoviKorisnik.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnNoviKorisnik.Name = "btnNoviKorisnik";
-            this.btnNoviKorisnik.Size = new System.Drawing.Size(96, 54);
-            this.btnNoviKorisnik.TabIndex = 14;
-            this.btnNoviKorisnik.Text = "Novi Korisnik";
-            this.btnNoviKorisnik.UseVisualStyleBackColor = false;
-            this.btnNoviKorisnik.Click += new System.EventHandler(this.btnNoviKorisnik_Click);
+            this.toolsNoviProizvod.Name = "toolsNoviProizvod";
+            this.toolsNoviProizvod.Size = new System.Drawing.Size(64, 24);
+            this.toolsNoviProizvod.Text = "Dodaj";
+            this.toolsNoviProizvod.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
-            // btnObrisiKorisnika
+            // toolsAzuriraj
             // 
-            this.btnObrisiKorisnika.BackColor = System.Drawing.Color.Red;
-            this.btnObrisiKorisnika.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnObrisiKorisnika.Location = new System.Drawing.Point(109, 247);
-            this.btnObrisiKorisnika.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnObrisiKorisnika.Name = "btnObrisiKorisnika";
-            this.btnObrisiKorisnika.Size = new System.Drawing.Size(96, 54);
-            this.btnObrisiKorisnika.TabIndex = 15;
-            this.btnObrisiKorisnika.Text = "Obriši Korisnika";
-            this.btnObrisiKorisnika.UseVisualStyleBackColor = false;
-            this.btnObrisiKorisnika.Click += new System.EventHandler(this.btnObrisiKorisnika_Click);
+            this.toolsAzuriraj.Name = "toolsAzuriraj";
+            this.toolsAzuriraj.Size = new System.Drawing.Size(78, 24);
+            this.toolsAzuriraj.Text = "Ažuriraj ";
+            this.toolsAzuriraj.Click += new System.EventHandler(this.toolsAzuriraj_Click);
+            // 
+            // toolSObrisiProizvod
+            // 
+            this.toolSObrisiProizvod.Name = "toolSObrisiProizvod";
+            this.toolSObrisiProizvod.Size = new System.Drawing.Size(62, 24);
+            this.toolSObrisiProizvod.Text = "Obriši";
+            this.toolSObrisiProizvod.Click += new System.EventHandler(this.toolSObrisiProizvod_Click);
             // 
             // DjelatnikForm
             // 
@@ -494,7 +588,10 @@
             this.Djelatnici.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).EndInit();
             this.Skladiste.ResumeLayout(false);
+            this.Skladiste.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,8 +625,12 @@
         private System.Windows.Forms.Button lblNoviProizvod;
         private System.Windows.Forms.Button btnDeleteProizvod;
         private System.Windows.Forms.Button btnAzuriraj;
-        private System.Windows.Forms.Button btnAzurirajKorisnika;
-        private System.Windows.Forms.Button btnNoviKorisnik;
-        private System.Windows.Forms.Button btnObrisiKorisnika;
+        private System.Windows.Forms.Button btnAzurirajDjelatnika;
+        private System.Windows.Forms.Button btnNoviDjelatnik;
+        private System.Windows.Forms.Button btnObrisiDjelatnika;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolsNoviProizvod;
+        private System.Windows.Forms.ToolStripMenuItem toolsAzuriraj;
+        private System.Windows.Forms.ToolStripMenuItem toolSObrisiProizvod;
     }
 }

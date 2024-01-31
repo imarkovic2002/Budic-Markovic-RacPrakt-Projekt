@@ -59,30 +59,16 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void OpenFormBasedOnRole(Djelatnik djelatnik)
         {
-
-            switch (djelatnik.Role.ToLower())
+            if(djelatnik.Role.ToLower() == "admin ")
             {
-                case "admin":
-
-                    foreach (TabPage tabPage in tabAdmin.TabPages)
-                    {
-                        tabPage.Visible = true;
-                    }
-                    lblAdmin.Text = "Admin " + djelatnik.Ime + " " + djelatnik.Prezime;
-                    break;
-
-                case "blagajnik":
-                    foreach (TabPage tabPage in tabAdmin.TabPages)
-                    {
-                        tabPage.Visible = false;
-                    }
-                    tabAdmin.TabPages[1].Visible = true;
-                    lblAdmin.Text = "Blagajnik " + djelatnik.Ime + " " + djelatnik.Prezime;
-                    break;
-
-                default:
-                    MessageBox.Show("Nepoznata uloga korisnika,");
-                    break;
+                foreach (TabPage tabPage in tabAdmin.TabPages)
+                {
+                    tabPage.Visible = true;
+                }
+            }
+            else if (djelatnik.Role.ToLower() == "blagajnik")
+            {
+                tabAdmin.TabPages[1].Visible = true;
             }
         }
 
@@ -234,6 +220,52 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
+
+            if (addEditDjelatnik.ShowDialog() == DialogResult.OK)
+            {
+                dgDjelatnici.DataSource = getDjelatnici();
+            }
+        }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(new Proizvod());
+            if (addEditProizvodForm.ShowDialog() == DialogResult.OK)
+            {
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
+        }
+
+        private void toolsAzuriraj_Click(object sender, EventArgs e)
+        {
+            Proizvod proizvod = new Proizvod();
+
+            proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
+            proizvod.naziv = dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
+            proizvod.cijena = dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
+            proizvod.kolicina = dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
+
+            AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(proizvod);
+
+            if (addEditProizvodForm.ShowDialog() == DialogResult.OK)
+            {
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
+        }
+
+        private void toolSObrisiProizvod_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int selectedId = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["ID"].Value);
+                _proizvodStore.ObrisiProizvod(selectedId);
+                dgSkladiste.DataSource = _proizvodStore.getProizvods();
+            }
         }
     }
 }
