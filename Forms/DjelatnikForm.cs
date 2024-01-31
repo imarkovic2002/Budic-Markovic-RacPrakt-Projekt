@@ -23,7 +23,7 @@ namespace Budić_Marković_RacPrakt_Projekt
     {
         private SqlConnectionFactory connectionFactory;
         private ProizvodStore _proizvodStore;
-
+        private DjelatnikStore _djelatnikStore;
         public DjelatnikForm(Djelatnik djelatnik)
         {
             InitializeComponent();
@@ -37,7 +37,8 @@ namespace Budić_Marković_RacPrakt_Projekt
             OpenFormBasedOnRole(djelatnik);
             if (_proizvodStore == null)
                 _proizvodStore = new ProizvodStore();
-
+            if (_djelatnikStore == null)    
+                _djelatnikStore = new DjelatnikStore();
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
 
@@ -146,6 +147,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                             djelatnik.Email = reader.GetString("email");
                             djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
                             djelatnik.Role = reader.GetString("role");
+                            djelatnik.Lozinka = reader.GetString("lozinka");
                             djelatnici.Add(djelatnik);
 
 
@@ -190,6 +192,48 @@ namespace Budić_Marković_RacPrakt_Projekt
             {
                 dgSkladiste.DataSource = _proizvodStore.getProizvods();
             }
+        }
+
+        private void btnNoviKorisnik_Click(object sender, EventArgs e)
+        {
+            AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
+            
+            if (addEditDjelatnik.ShowDialog()==DialogResult.OK)
+            {
+                dgDjelatnici.DataSource = getDjelatnici();
+            }
+        }
+
+        private void btnObrisiKorisnika_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int selectedId = Convert.ToInt32(dgDjelatnici.SelectedRows[0].Cells["ID"].Value);
+                _djelatnikStore.ObrisiDjelatnika(selectedId);
+                dgDjelatnici.DataSource=getDjelatnici();
+            }
+        }
+
+        private void btnAzurirajKorisnika_Click(object sender, EventArgs e)
+        {
+            Djelatnik djelatnik =new Djelatnik();
+            djelatnik.ID = Convert.ToInt32(dgDjelatnici.SelectedRows[0].Cells["ID"].Value);
+            djelatnik.Ime = dgDjelatnici.SelectedRows[0].Cells["Ime"].Value.ToString();
+            djelatnik.Prezime = dgDjelatnici.SelectedRows[0].Cells["Prezime"].Value.ToString();
+            djelatnik.DatumRodjenja = DateTime.Parse(dgDjelatnici.SelectedRows[0].Cells["DatumRodjenja"].Value.ToString());
+            djelatnik.OIB = dgDjelatnici.SelectedRows[0].Cells["OIB"].Value.ToString();
+            djelatnik.BrojMobitela = dgDjelatnici.SelectedRows[0].Cells["BrojMobitela"].Value.ToString();
+            djelatnik.Email = dgDjelatnici.SelectedRows[0].Cells["Email"].Value.ToString();
+            djelatnik.Role = dgDjelatnici.SelectedRows[0].Cells["Role"].Value.ToString();
+            djelatnik.Lozinka = dgDjelatnici.SelectedRows[0].Cells["Lozinka"].Value.ToString();
+            djelatnik.DatumZaposlenja = DateTime.Parse(dgDjelatnici.SelectedRows[0].Cells["DatumZaposlenja"].Value.ToString());
+            AddEditDjelatnik addEditDjelatnik=new AddEditDjelatnik(djelatnik);
+
+            if (addEditDjelatnik.ShowDialog() == DialogResult.OK)
+            {
+                dgDjelatnici.DataSource = getDjelatnici();
+            }
+
         }
     }
 }

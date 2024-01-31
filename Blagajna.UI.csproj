@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditDjelatnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditDjelatnik.Designer.cs">
+      <DependentUpon>AddEditDjelatnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditProizvodForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddEditDjelatnik.resx">
+      <DependentUpon>AddEditDjelatnik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditProizvodForm.resx">
       <DependentUpon>AddEditProizvodForm.cs</DependentUpon>
     </EmbeddedResource>
