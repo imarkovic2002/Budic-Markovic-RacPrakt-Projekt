@@ -76,6 +76,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblWelcome);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();

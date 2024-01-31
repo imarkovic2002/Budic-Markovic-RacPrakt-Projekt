@@ -25,8 +25,9 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            this.DialogResult = DialogResult.OK;
+           
+           
         }
     }
 }

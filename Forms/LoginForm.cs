@@ -9,7 +9,7 @@ namespace Budić_Marković_RacPrakt_Projekt
     public partial class LoginForm : Form
     {
         private SqlConnectionFactory connectionFactory;
-
+       public Djelatnik djelatnik = new Djelatnik();
         public LoginForm()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            Djelatnik djelatnik = new Djelatnik();
+           
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
                 string query = "SELECT * FROM djelatnik WHERE email = @username AND lozinka = @Password";
@@ -67,8 +67,10 @@ namespace Budić_Marković_RacPrakt_Projekt
                     }
                 }
             }
-            DjelatnikForm adminForm = new DjelatnikForm(djelatnik);
-             adminForm.Show();
+           
+            this.DialogResult=DialogResult.OK;
+            
+
             
         }
         

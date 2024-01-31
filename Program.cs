@@ -16,7 +16,18 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            using (Main main=new Main())
+            {
+                if(main.ShowDialog() == DialogResult.OK)
+                {
+                    LoginForm loginForm = new LoginForm();
+                    if (loginForm.ShowDialog() == DialogResult.OK)
+                    {
+                        Application.Run(new DjelatnikForm(loginForm.djelatnik));
+                    }
+                }
+            }
+            
         }
     }
 }

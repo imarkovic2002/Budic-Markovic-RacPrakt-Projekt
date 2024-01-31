@@ -41,7 +41,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                 _djelatnikStore = new DjelatnikStore();
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
-
+            this.DialogResult = DialogResult.OK;
 
         }
 
@@ -235,6 +235,11 @@ namespace Budić_Marković_RacPrakt_Projekt
                 _djelatnikStore.ObrisiDjelatnika(selectedId);
                 dgDjelatnici.DataSource = getDjelatnici();
             }
+        }
+
+        private void DjelatnikForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
