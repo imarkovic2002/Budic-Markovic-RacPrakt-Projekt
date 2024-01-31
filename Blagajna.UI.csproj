@@ -85,12 +85,6 @@
     <Compile Include="Forms\AddEditProizvodForm.Designer.cs">
       <DependentUpon>AddEditProizvodForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BlagajnaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\BlagajnaForm.Designer.cs">
-      <DependentUpon>BlagajnaForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DjelatnikForm.cs">
       <SubType>Form</SubType>
     </Compile>

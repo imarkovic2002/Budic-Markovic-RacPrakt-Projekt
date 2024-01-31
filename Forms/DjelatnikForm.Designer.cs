@@ -100,12 +100,14 @@
             this.tabAdmin.Controls.Add(this.Blagajna);
             this.tabAdmin.Controls.Add(this.Djelatnici);
             this.tabAdmin.Controls.Add(this.Skladiste);
+            this.tabAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tabAdmin.Location = new System.Drawing.Point(19, 54);
+            this.tabAdmin.Location = new System.Drawing.Point(0, 0);
             this.tabAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.SelectedIndex = 0;
-            this.tabAdmin.Size = new System.Drawing.Size(771, 333);
+            this.tabAdmin.Size = new System.Drawing.Size(809, 333);
+            this.tabAdmin.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabAdmin.TabIndex = 7;
             // 
             // Promet
@@ -115,7 +117,7 @@
             this.Promet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Promet.Name = "Promet";
             this.Promet.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Promet.Size = new System.Drawing.Size(763, 304);
+            this.Promet.Size = new System.Drawing.Size(801, 304);
             this.Promet.TabIndex = 0;
             this.Promet.Text = "Promet";
             this.Promet.UseVisualStyleBackColor = true;
@@ -124,12 +126,13 @@
             // dgPromet
             // 
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPromet.Location = new System.Drawing.Point(64, 34);
+            this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPromet.Location = new System.Drawing.Point(3, 2);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgPromet.Name = "dgPromet";
             this.dgPromet.RowHeadersWidth = 51;
             this.dgPromet.RowTemplate.Height = 24;
-            this.dgPromet.Size = new System.Drawing.Size(669, 199);
+            this.dgPromet.Size = new System.Drawing.Size(795, 300);
             this.dgPromet.TabIndex = 0;
             // 
             // Blagajna
@@ -352,12 +355,13 @@
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDjelatnici.Location = new System.Drawing.Point(0, 61);
+            this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgDjelatnici.Name = "dgDjelatnici";
             this.dgDjelatnici.RowHeadersWidth = 51;
             this.dgDjelatnici.RowTemplate.Height = 24;
-            this.dgDjelatnici.Size = new System.Drawing.Size(653, 243);
+            this.dgDjelatnici.Size = new System.Drawing.Size(757, 272);
             this.dgDjelatnici.TabIndex = 0;
             // 
             // menuDjelatnici
@@ -411,12 +415,13 @@
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSkladiste.Location = new System.Drawing.Point(0, 63);
+            this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgSkladiste.Name = "dgSkladiste";
             this.dgSkladiste.RowHeadersWidth = 51;
             this.dgSkladiste.RowTemplate.Height = 24;
-            this.dgSkladiste.Size = new System.Drawing.Size(763, 237);
+            this.dgSkladiste.Size = new System.Drawing.Size(757, 272);
             this.dgSkladiste.TabIndex = 0;
             // 
             // menuStrip1
@@ -470,13 +475,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 484);
+            this.ClientSize = new System.Drawing.Size(809, 477);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabAdmin);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblAdmin);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DjelatnikForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.DjelatnikForm_Load);
             this.tabAdmin.ResumeLayout(false);

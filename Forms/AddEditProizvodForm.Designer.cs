@@ -75,7 +75,7 @@
             // 
             this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtNaziv.Location = new System.Drawing.Point(135, 47);
-            this.txtNaziv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNaziv.Margin = new System.Windows.Forms.Padding(4);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(197, 26);
             this.txtNaziv.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.txtCijena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCijena.Location = new System.Drawing.Point(135, 92);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCijena.Margin = new System.Windows.Forms.Padding(4);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(197, 26);
             this.txtCijena.TabIndex = 4;
@@ -93,7 +93,7 @@
             // 
             this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtKolicina.Location = new System.Drawing.Point(135, 137);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(197, 26);
             this.txtKolicina.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.Location = new System.Drawing.Point(16, 223);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 52);
             this.btnSave.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(325, 223);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 52);
             this.button2.TabIndex = 7;
@@ -135,8 +135,9 @@
             this.Controls.Add(this.lblKolicina);
             this.Controls.Add(this.lblCijena);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddEditProizvodForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditProizvodForm";
             this.ResumeLayout(false);
             this.PerformLayout();

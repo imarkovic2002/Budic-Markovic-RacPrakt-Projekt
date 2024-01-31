@@ -51,11 +51,7 @@ namespace Budić_Marković_RacPrakt_Projekt
             System.Windows.Forms.Application.Exit();
         }
 
-        private void btnBlagajna_Click(object sender, EventArgs e)
-        {
-            BlagajnaForm blagajnaForm = new BlagajnaForm();
-            blagajnaForm.ShowDialog();
-        }
+       
 
         private void OpenFormBasedOnRole(Djelatnik djelatnik)
         {

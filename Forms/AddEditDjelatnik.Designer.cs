@@ -189,6 +189,7 @@
             this.txtBoxLozinka.Location = new System.Drawing.Point(193, 228);
             this.txtBoxLozinka.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxLozinka.Name = "txtBoxLozinka";
+            this.txtBoxLozinka.PasswordChar = '*';
             this.txtBoxLozinka.Size = new System.Drawing.Size(197, 26);
             this.txtBoxLozinka.TabIndex = 30;
             // 
@@ -280,6 +281,7 @@
             this.Controls.Add(this.lblCijena);
             this.Controls.Add(this.lbIme);
             this.Name = "AddEditDjelatnik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditDjelatnik";
             this.Load += new System.EventHandler(this.AddEditDjelatnik_Load);
             this.ResumeLayout(false);
