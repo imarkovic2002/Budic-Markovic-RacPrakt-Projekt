@@ -182,7 +182,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                 Storno storno = new Storno();   
                 storno.Id_transakcija= Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ID"].Value);
                 storno.Datum_storno=DateTime.Now;
-                storno.Ukupni_iznos= Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value);
+                storno.Ukupni_iznos= float.Parse(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value.ToString());
                 _stornoStore.DodajStorno(storno);
 
             }

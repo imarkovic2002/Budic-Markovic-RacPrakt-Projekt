@@ -19,15 +19,12 @@ namespace Blagajna.DB.Stores
             {
                 if (con != null)
                 {
-                    string upit = "INSERT INTO storno (ukupni_iznos, datum_storna, id_transakcija)"+
-"VALUES(@ukupni_iznos,@datum_storna,(SELECT Id FROM transakcija WHERE Id = @id_transakcija))";
+                    string upit = "INSERT INTO storno (datum_storna,ukupni_iznos) VALUES(@datum_storna,@ukupni_iznos);" +
+                                   "UPDATE transakcija SET storno_id = LAST_INSERT_ID() WHERE id = @id_transakcija; ";
                     
-
-
-
                     using (var command = new MySqlCommand(upit, con))
                     {
-                        command.Parameters.AddWithValue("@ukupni_iznos", storno.Ukupni_iznos);
+                        command.Parameters.AddWithValue("@ukupni_iznos", (storno.Ukupni_iznos)*(-1.0));
                         command.Parameters.AddWithValue("@datum_storna", storno.Datum_storno);
                         command.Parameters.AddWithValue("@id_transakcija", storno.Id_transakcija);
 
