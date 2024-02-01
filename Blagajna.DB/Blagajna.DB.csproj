@@ -79,6 +79,7 @@
     <Compile Include="SqlConnectionFactory.cs" />
     <Compile Include="Stores\DjelatnikStore.cs" />
     <Compile Include="Stores\ProizvodStore.cs" />
+    <Compile Include="Stores\StornoStore.cs" />
     <Compile Include="Stores\TransakcijaStore.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

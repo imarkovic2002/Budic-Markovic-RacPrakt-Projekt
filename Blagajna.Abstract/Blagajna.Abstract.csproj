@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Models\Djelatnik.cs" />
     <Compile Include="Models\Proizvod.cs" />
+    <Compile Include="Models\Storno.cs" />
     <Compile Include="Models\Transakcija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

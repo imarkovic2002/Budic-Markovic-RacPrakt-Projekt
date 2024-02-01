@@ -71,6 +71,8 @@
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.stornoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAdmin.SuspendLayout();
             this.tabProfil.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -83,6 +85,7 @@
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -223,6 +226,7 @@
             // Promet
             // 
             this.Promet.Controls.Add(this.dgPromet);
+            this.Promet.Controls.Add(this.menuStrip3);
             this.Promet.Location = new System.Drawing.Point(4, 25);
             this.Promet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Promet.Name = "Promet";
@@ -237,12 +241,12 @@
             // 
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPromet.Location = new System.Drawing.Point(3, 2);
+            this.dgPromet.Location = new System.Drawing.Point(3, 30);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgPromet.Name = "dgPromet";
             this.dgPromet.RowHeadersWidth = 51;
             this.dgPromet.RowTemplate.Height = 24;
-            this.dgPromet.Size = new System.Drawing.Size(795, 300);
+            this.dgPromet.Size = new System.Drawing.Size(795, 272);
             this.dgPromet.TabIndex = 0;
             // 
             // Blagajna
@@ -587,6 +591,24 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // menuStrip3
+            // 
+            this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stornoToolStripMenuItem});
+            this.menuStrip3.Location = new System.Drawing.Point(3, 2);
+            this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip3.TabIndex = 1;
+            this.menuStrip3.Text = "menuStrip3";
+            // 
+            // stornoToolStripMenuItem
+            // 
+            this.stornoToolStripMenuItem.Name = "stornoToolStripMenuItem";
+            this.stornoToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.stornoToolStripMenuItem.Text = "Storno";
+            this.stornoToolStripMenuItem.Click += new System.EventHandler(this.stornoToolStripMenuItem_Click);
+            // 
             // DjelatnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,6 +618,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblAdmin);
+            this.MainMenuStrip = this.menuStrip3;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DjelatnikForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -607,6 +630,7 @@
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.Promet.ResumeLayout(false);
+            this.Promet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).EndInit();
             this.Blagajna.ResumeLayout(false);
             this.Djelatnici.ResumeLayout(false);
@@ -619,6 +643,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,5 +693,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblOsobniPoddaci;
         private System.Windows.Forms.Label lblBroj;
+        private System.Windows.Forms.MenuStrip menuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem stornoToolStripMenuItem;
     }
 }

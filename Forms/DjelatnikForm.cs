@@ -25,6 +25,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         private ProizvodStore _proizvodStore;
         private DjelatnikStore _djelatnikStore;
         private TransakcijaStore _transakcijaStore;
+        private StornoStore _stornoStore;
         private Djelatnik djelatnikUse;
         public DjelatnikForm(Djelatnik djelatnik)
         {
@@ -42,6 +43,8 @@ namespace Budić_Marković_RacPrakt_Projekt
                 _djelatnikStore = new DjelatnikStore();
             if(_transakcijaStore== null)
                 _transakcijaStore=new TransakcijaStore();
+            if(_stornoStore == null)
+                _stornoStore=new StornoStore();
             dgPromet.DataSource = _transakcijaStore.getTransakcije();
             dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             var proizvodi = _proizvodStore.getProizvods();
@@ -171,6 +174,18 @@ namespace Budić_Marković_RacPrakt_Projekt
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(djelatnikUse);
 
             addEditDjelatnik.ShowDialog();
+        }
+        private void stornoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Storno storno = new Storno();   
+                storno.Id_transakcija= Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ID"].Value);
+                storno.Datum_storno=DateTime.Now;
+                storno.Ukupni_iznos= Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value);
+                _stornoStore.DodajStorno(storno);
+
+            }
         }
     }
 

@@ -56,8 +56,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                                 djelatnik.Role = reader.GetString("role");
                                 djelatnik.Lozinka= reader.GetString("lozinka");
 
-
-
                             }
                             else
                             {
