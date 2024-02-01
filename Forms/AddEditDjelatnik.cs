@@ -22,7 +22,11 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             InitializeComponent();
             if (_djelatnikStore == null) 
                 _djelatnikStore = new DjelatnikStore();
-            if(djelatnik!=null && djelatnik.ID != 0)
+
+            cmbRole.Items.Add("Admin");
+            cmbRole.Items.Add("Blagajnik");
+
+            if (djelatnik!=null && djelatnik.ID != 0)
             {
                 this.Text = "Ažuriraj Djelatnika";
                 btnSave.Text = "Ažuriraj";
@@ -33,10 +37,11 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
                 txtBoxEmail.Text = djelatnik.Email;
                 txBoxBrojMobitela.Text = djelatnik.BrojMobitela;
                 txtBoxLozinka.Text = djelatnik.Lozinka;
-                txtBoxRole.Text = djelatnik.Role;
                 dTPRodjenja.Value = djelatnik.DatumRodjenja;
                 dTPZaposlenja.Value = djelatnik.DatumZaposlenja;
                 Djelatnik_ID = djelatnik.ID;
+
+                cmbRole.SelectedItem = djelatnik.Role;
             }
             else
             {
@@ -61,8 +66,8 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             djelatnik.BrojMobitela = txBoxBrojMobitela.Text;
             djelatnik.Email=txtBoxEmail.Text;
             djelatnik.Lozinka=txtBoxLozinka.Text;
-            djelatnik.DatumZaposlenja=dTPZaposlenja.Value;
-            djelatnik.Role = txtBoxRole.Text;
+            djelatnik.DatumZaposlenja = dTPZaposlenja.Value;
+            djelatnik.Role = cmbRole.SelectedItem.ToString();
             if (Djelatnik_ID != 0)
             {
                 _djelatnikStore.AzurirajDjelatnika(djelatnik);
@@ -79,5 +84,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+
     }
 }

@@ -225,7 +225,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void toolsSObrisi_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int selectedId = Convert.ToInt32(dgDjelatnici.SelectedRows[0].Cells["ID"].Value);
                 _djelatnikStore.ObrisiDjelatnika(selectedId);

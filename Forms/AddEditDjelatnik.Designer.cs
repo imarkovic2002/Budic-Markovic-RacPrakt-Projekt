@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtOib = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
@@ -40,7 +40,6 @@
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.lbBroj_mobitela = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxRole = new System.Windows.Forms.TextBox();
             this.txtBoxLozinka = new System.Windows.Forms.TextBox();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbLozink = new System.Windows.Forms.Label();
@@ -48,19 +47,20 @@
             this.lbDatumRod = new System.Windows.Forms.Label();
             this.dTPRodjenja = new System.Windows.Forms.DateTimePicker();
             this.dTPZaposlenja = new System.Windows.Forms.DateTimePicker();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(322, 385);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 52);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Izađi";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnBack.Location = new System.Drawing.Point(322, 385);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(116, 52);
+            this.btnBack.TabIndex = 23;
+            this.btnBack.Text = "Izađi";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnSave
             // 
@@ -137,7 +137,7 @@
             // txBoxBrojMobitela
             // 
             this.txBoxBrojMobitela.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txBoxBrojMobitela.Location = new System.Drawing.Point(193, 187);
+            this.txBoxBrojMobitela.Location = new System.Drawing.Point(193, 231);
             this.txBoxBrojMobitela.Margin = new System.Windows.Forms.Padding(4);
             this.txBoxBrojMobitela.Name = "txBoxBrojMobitela";
             this.txBoxBrojMobitela.Size = new System.Drawing.Size(197, 26);
@@ -156,7 +156,7 @@
             // 
             this.lbBroj_mobitela.AutoSize = true;
             this.lbBroj_mobitela.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbBroj_mobitela.Location = new System.Drawing.Point(13, 189);
+            this.lbBroj_mobitela.Location = new System.Drawing.Point(13, 234);
             this.lbBroj_mobitela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBroj_mobitela.Name = "lbBroj_mobitela";
             this.lbBroj_mobitela.Size = new System.Drawing.Size(127, 20);
@@ -174,19 +174,10 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Email:";
             // 
-            // txtBoxRole
-            // 
-            this.txtBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxRole.Location = new System.Drawing.Point(193, 273);
-            this.txtBoxRole.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxRole.Name = "txtBoxRole";
-            this.txtBoxRole.Size = new System.Drawing.Size(197, 26);
-            this.txtBoxRole.TabIndex = 31;
-            // 
             // txtBoxLozinka
             // 
             this.txtBoxLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBoxLozinka.Location = new System.Drawing.Point(193, 228);
+            this.txtBoxLozinka.Location = new System.Drawing.Point(193, 187);
             this.txtBoxLozinka.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxLozinka.Name = "txtBoxLozinka";
             this.txtBoxLozinka.PasswordChar = '*';
@@ -208,12 +199,12 @@
             // 
             this.lbLozink.AutoSize = true;
             this.lbLozink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbLozink.Location = new System.Drawing.Point(13, 228);
+            this.lbLozink.Location = new System.Drawing.Point(13, 193);
             this.lbLozink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLozink.Name = "lbLozink";
-            this.lbLozink.Size = new System.Drawing.Size(68, 20);
+            this.lbLozink.Size = new System.Drawing.Size(80, 20);
             this.lbLozink.TabIndex = 28;
-            this.lbLozink.Text = "lozinka";
+            this.lbLozink.Text = "Lozinka:";
             // 
             // lbDatumZaposlenja
             // 
@@ -255,16 +246,25 @@
             this.dTPZaposlenja.Size = new System.Drawing.Size(200, 22);
             this.dTPZaposlenja.TabIndex = 35;
             // 
+            // cmbRole
+            // 
+            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(193, 269);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(197, 28);
+            this.cmbRole.TabIndex = 36;
+            // 
             // AddEditDjelatnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.dTPZaposlenja);
             this.Controls.Add(this.dTPRodjenja);
             this.Controls.Add(this.lbDatumZaposlenja);
             this.Controls.Add(this.lbDatumRod);
-            this.Controls.Add(this.txtBoxRole);
             this.Controls.Add(this.txtBoxLozinka);
             this.Controls.Add(this.lbRole);
             this.Controls.Add(this.lbLozink);
@@ -272,7 +272,7 @@
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.lbBroj_mobitela);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOib);
             this.Controls.Add(this.txtPrezime);
@@ -291,7 +291,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtOib;
         private System.Windows.Forms.TextBox txtPrezime;
@@ -303,7 +303,6 @@
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label lbBroj_mobitela;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxRole;
         private System.Windows.Forms.TextBox txtBoxLozinka;
         private System.Windows.Forms.Label lbRole;
         private System.Windows.Forms.Label lbLozink;
@@ -311,5 +310,6 @@
         private System.Windows.Forms.Label lbDatumRod;
         private System.Windows.Forms.DateTimePicker dTPRodjenja;
         private System.Windows.Forms.DateTimePicker dTPZaposlenja;
+        private System.Windows.Forms.ComboBox cmbRole;
     }
 }
