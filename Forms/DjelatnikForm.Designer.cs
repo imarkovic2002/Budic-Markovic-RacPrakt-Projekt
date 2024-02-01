@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
             this.tabProfil = new System.Windows.Forms.TabPage();
+            this.lblDatumRodenja = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblOsobniPoddaci = new System.Windows.Forms.Label();
+            this.lblBroj = new System.Windows.Forms.Label();
+            this.lblRoleProfil = new System.Windows.Forms.Label();
             this.lblDobrosao = new System.Windows.Forms.Label();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolSChangeProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.Promet = new System.Windows.Forms.TabPage();
             this.dgPromet = new System.Windows.Forms.DataGridView();
             this.Blagajna = new System.Windows.Forms.TabPage();
@@ -70,15 +71,9 @@
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toolSChangeProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblRoleProfil = new System.Windows.Forms.Label();
-            this.lblBroj = new System.Windows.Forms.Label();
-            this.lblOsobniPoddaci = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblDatumRodenja = new System.Windows.Forms.Label();
             this.tabAdmin.SuspendLayout();
             this.tabProfil.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.Promet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
             this.Blagajna.SuspendLayout();
@@ -88,7 +83,6 @@
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -147,6 +141,56 @@
             this.tabProfil.Text = "Moj profil";
             this.tabProfil.UseVisualStyleBackColor = true;
             // 
+            // lblDatumRodenja
+            // 
+            this.lblDatumRodenja.AutoSize = true;
+            this.lblDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDatumRodenja.Location = new System.Drawing.Point(11, 116);
+            this.lblDatumRodenja.Name = "lblDatumRodenja";
+            this.lblDatumRodenja.Size = new System.Drawing.Size(124, 20);
+            this.lblDatumRodenja.TabIndex = 6;
+            this.lblDatumRodenja.Text = "Datum rođenja:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmail.Location = new System.Drawing.Point(11, 149);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(56, 20);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblOsobniPoddaci
+            // 
+            this.lblOsobniPoddaci.AutoSize = true;
+            this.lblOsobniPoddaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOsobniPoddaci.Location = new System.Drawing.Point(10, 70);
+            this.lblOsobniPoddaci.Name = "lblOsobniPoddaci";
+            this.lblOsobniPoddaci.Size = new System.Drawing.Size(166, 20);
+            this.lblOsobniPoddaci.TabIndex = 4;
+            this.lblOsobniPoddaci.Text = "Moji osobni podaci";
+            // 
+            // lblBroj
+            // 
+            this.lblBroj.AutoSize = true;
+            this.lblBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBroj.Location = new System.Drawing.Point(11, 185);
+            this.lblBroj.Name = "lblBroj";
+            this.lblBroj.Size = new System.Drawing.Size(113, 20);
+            this.lblBroj.TabIndex = 3;
+            this.lblBroj.Text = "Broj mobitela:";
+            // 
+            // lblRoleProfil
+            // 
+            this.lblRoleProfil.AutoSize = true;
+            this.lblRoleProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRoleProfil.Location = new System.Drawing.Point(11, 215);
+            this.lblRoleProfil.Name = "lblRoleProfil";
+            this.lblRoleProfil.Size = new System.Drawing.Size(48, 20);
+            this.lblRoleProfil.TabIndex = 2;
+            this.lblRoleProfil.Text = "Role:";
+            // 
             // lblDobrosao
             // 
             this.lblDobrosao.AutoSize = true;
@@ -156,6 +200,25 @@
             this.lblDobrosao.Size = new System.Drawing.Size(164, 29);
             this.lblDobrosao.TabIndex = 0;
             this.lblDobrosao.Text = "Dobrodošao,";
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolSChangeProfile});
+            this.menuStrip2.Location = new System.Drawing.Point(3, 273);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuProfil";
+            // 
+            // toolSChangeProfile
+            // 
+            this.toolSChangeProfile.Name = "toolSChangeProfile";
+            this.toolSChangeProfile.Size = new System.Drawing.Size(115, 24);
+            this.toolSChangeProfile.Text = "Izmjeni profil ";
+            this.toolSChangeProfile.Click += new System.EventHandler(this.toolSChangeProfile_Click);
             // 
             // Promet
             // 
@@ -172,23 +235,7 @@
             // 
             // dgPromet
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPromet.Location = new System.Drawing.Point(3, 2);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -417,23 +464,7 @@
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -493,23 +524,7 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -572,74 +587,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolSChangeProfile});
-            this.menuStrip2.Location = new System.Drawing.Point(3, 273);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(795, 28);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuProfil";
-            // 
-            // toolSChangeProfile
-            // 
-            this.toolSChangeProfile.Name = "toolSChangeProfile";
-            this.toolSChangeProfile.Size = new System.Drawing.Size(115, 24);
-            this.toolSChangeProfile.Text = "Izmjeni profil ";
-            // 
-            // lblRoleProfil
-            // 
-            this.lblRoleProfil.AutoSize = true;
-            this.lblRoleProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRoleProfil.Location = new System.Drawing.Point(11, 215);
-            this.lblRoleProfil.Name = "lblRoleProfil";
-            this.lblRoleProfil.Size = new System.Drawing.Size(48, 20);
-            this.lblRoleProfil.TabIndex = 2;
-            this.lblRoleProfil.Text = "Role:";
-            // 
-            // lblBroj
-            // 
-            this.lblBroj.AutoSize = true;
-            this.lblBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblBroj.Location = new System.Drawing.Point(11, 185);
-            this.lblBroj.Name = "lblBroj";
-            this.lblBroj.Size = new System.Drawing.Size(113, 20);
-            this.lblBroj.TabIndex = 3;
-            this.lblBroj.Text = "Broj mobitela:";
-            // 
-            // lblOsobniPoddaci
-            // 
-            this.lblOsobniPoddaci.AutoSize = true;
-            this.lblOsobniPoddaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblOsobniPoddaci.Location = new System.Drawing.Point(10, 70);
-            this.lblOsobniPoddaci.Name = "lblOsobniPoddaci";
-            this.lblOsobniPoddaci.Size = new System.Drawing.Size(166, 20);
-            this.lblOsobniPoddaci.TabIndex = 4;
-            this.lblOsobniPoddaci.Text = "Moji osobni podaci";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblEmail.Location = new System.Drawing.Point(11, 149);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(56, 20);
-            this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblDatumRodenja
-            // 
-            this.lblDatumRodenja.AutoSize = true;
-            this.lblDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDatumRodenja.Location = new System.Drawing.Point(11, 116);
-            this.lblDatumRodenja.Name = "lblDatumRodenja";
-            this.lblDatumRodenja.Size = new System.Drawing.Size(124, 20);
-            this.lblDatumRodenja.TabIndex = 6;
-            this.lblDatumRodenja.Text = "Datum rođenja:";
-            // 
             // DjelatnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -657,6 +604,8 @@
             this.tabAdmin.ResumeLayout(false);
             this.tabProfil.ResumeLayout(false);
             this.tabProfil.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.Promet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).EndInit();
             this.Blagajna.ResumeLayout(false);
@@ -670,8 +619,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

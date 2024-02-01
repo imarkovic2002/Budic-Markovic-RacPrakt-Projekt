@@ -45,7 +45,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
                             if (reader != null)
                             {
-                                
+                                djelatnik.ID = reader.GetInt32("id");
                                 djelatnik.Ime = reader.GetString("ime");
                                 djelatnik.Prezime = reader.GetString("prezime");
                                 djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
@@ -54,7 +54,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                                 djelatnik.Email = reader.GetString("email");
                                 djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
                                 djelatnik.Role = reader.GetString("role");
-
+                                djelatnik.Lozinka= reader.GetString("lozinka");
 
 
 

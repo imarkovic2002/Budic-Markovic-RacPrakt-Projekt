@@ -24,6 +24,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         private SqlConnectionFactory connectionFactory;
         private ProizvodStore _proizvodStore;
         private DjelatnikStore _djelatnikStore;
+        private Djelatnik djelatnikUse;
         public DjelatnikForm(Djelatnik djelatnik)
         {
             InitializeComponent();
@@ -42,22 +43,20 @@ namespace Budić_Marković_RacPrakt_Projekt
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
             this.DialogResult = DialogResult.OK;
-
-            lblDobrosao.Text =lblDobrosao.Text + djelatnik.Ime.ToString() + " " + djelatnik.Prezime.ToString();
+            djelatnikUse = new Djelatnik();
+            
+            djelatnikUse = djelatnik;
+            lblDobrosao.Text =lblDobrosao.Text + djelatnikUse.Ime.ToString() + " " + djelatnik.Prezime.ToString();
             lblDatumRodenja.Text = lblDatumRodenja.Text + " " + djelatnik.DatumRodjenja.ToShortDateString();
             lblEmail.Text = lblEmail.Text + " " + djelatnik.Email.ToString();
             lblBroj.Text += " " + djelatnik.BrojMobitela.ToString();
             lblRoleProfil.Text += " " + djelatnik.Role.ToString();
         }
-
         private void lblBack_Click(object sender, EventArgs e)
         {
             this.Close();
             System.Windows.Forms.Application.Exit();
         }
-
-       
-
         private void OpenFormBasedOnRole(Djelatnik djelatnik)
         {
             if(djelatnik.Role.ToLower() == "admin ")
@@ -72,12 +71,10 @@ namespace Budić_Marković_RacPrakt_Projekt
                 tabAdmin.TabPages[1].Visible = true;
             }
         }
-
         private void Promet_Click(object sender, EventArgs e)
         {
 
         }
-
         List<Transakcija> getTransakcije()
         {
             List<Transakcija> tranksakcija = new List<Transakcija>();
@@ -145,7 +142,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 return djelatnici;
             }
         }
-
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
@@ -155,7 +151,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
         }
-
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(new Proizvod());
@@ -164,7 +159,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgSkladiste.DataSource = _proizvodStore.getProizvods();
             }
         }
-
         private void toolsAzuriraj_Click(object sender, EventArgs e)
         {
             Proizvod proizvod = new Proizvod();
@@ -181,7 +175,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgSkladiste.DataSource = _proizvodStore.getProizvods();
             }
         }
-
         private void toolSObrisiProizvod_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -191,12 +184,10 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgSkladiste.DataSource = _proizvodStore.getProizvods();
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void toolSDodaj_Click(object sender, EventArgs e)
         {
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
@@ -206,7 +197,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
         }
-
         private void toolAzuriraj_Click(object sender, EventArgs e)
         {
             Djelatnik djelatnik = new Djelatnik();
@@ -227,7 +217,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
         }
-
         private void toolsSObrisi_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -237,14 +226,16 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
         }
-       
         private void DjelatnikForm_Load(object sender, EventArgs e)
         {
 
         }
+        private void toolSChangeProfile_Click(object sender, EventArgs e)
+        {
+            AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(djelatnikUse);
 
-        
-
+            addEditDjelatnik.ShowDialog();
+        }
     }
 
 }
