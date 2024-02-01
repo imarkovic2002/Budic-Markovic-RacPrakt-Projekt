@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
@@ -38,6 +39,8 @@
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
+            this.tabProfil = new System.Windows.Forms.TabPage();
+            this.lblDobrosao = new System.Windows.Forms.Label();
             this.Promet = new System.Windows.Forms.TabPage();
             this.dgPromet = new System.Windows.Forms.DataGridView();
             this.Blagajna = new System.Windows.Forms.TabPage();
@@ -66,7 +69,16 @@
             this.toolsAzuriraj = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolSChangeProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblRoleProfil = new System.Windows.Forms.Label();
+            this.lblBroj = new System.Windows.Forms.Label();
+            this.lblOsobniPoddaci = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblDatumRodenja = new System.Windows.Forms.Label();
             this.tabAdmin.SuspendLayout();
+            this.tabProfil.SuspendLayout();
             this.Promet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
             this.Blagajna.SuspendLayout();
@@ -76,6 +88,7 @@
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -102,6 +115,7 @@
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.tabProfil);
             this.tabAdmin.Controls.Add(this.Promet);
             this.tabAdmin.Controls.Add(this.Blagajna);
             this.tabAdmin.Controls.Add(this.Djelatnici);
@@ -115,6 +129,33 @@
             this.tabAdmin.Size = new System.Drawing.Size(809, 333);
             this.tabAdmin.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabAdmin.TabIndex = 7;
+            // 
+            // tabProfil
+            // 
+            this.tabProfil.Controls.Add(this.lblDatumRodenja);
+            this.tabProfil.Controls.Add(this.lblEmail);
+            this.tabProfil.Controls.Add(this.lblOsobniPoddaci);
+            this.tabProfil.Controls.Add(this.lblBroj);
+            this.tabProfil.Controls.Add(this.lblRoleProfil);
+            this.tabProfil.Controls.Add(this.lblDobrosao);
+            this.tabProfil.Controls.Add(this.menuStrip2);
+            this.tabProfil.Location = new System.Drawing.Point(4, 25);
+            this.tabProfil.Name = "tabProfil";
+            this.tabProfil.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProfil.Size = new System.Drawing.Size(801, 304);
+            this.tabProfil.TabIndex = 4;
+            this.tabProfil.Text = "Moj profil";
+            this.tabProfil.UseVisualStyleBackColor = true;
+            // 
+            // lblDobrosao
+            // 
+            this.lblDobrosao.AutoSize = true;
+            this.lblDobrosao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDobrosao.Location = new System.Drawing.Point(3, 16);
+            this.lblDobrosao.Name = "lblDobrosao";
+            this.lblDobrosao.Size = new System.Drawing.Size(164, 29);
+            this.lblDobrosao.TabIndex = 0;
+            this.lblDobrosao.Text = "Dobrodošao,";
             // 
             // Promet
             // 
@@ -187,7 +228,7 @@
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button10.Location = new System.Drawing.Point(485, 217);
+            this.button10.Location = new System.Drawing.Point(326, 212);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(96, 71);
@@ -202,7 +243,7 @@
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button9.Location = new System.Drawing.Point(384, 217);
+            this.button9.Location = new System.Drawing.Point(225, 212);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(96, 71);
@@ -217,7 +258,7 @@
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button8.Location = new System.Drawing.Point(283, 217);
+            this.button8.Location = new System.Drawing.Point(124, 212);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(96, 71);
@@ -232,7 +273,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button7.Location = new System.Drawing.Point(180, 217);
+            this.button7.Location = new System.Drawing.Point(21, 212);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(96, 71);
@@ -247,7 +288,7 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button6.Location = new System.Drawing.Point(485, 123);
+            this.button6.Location = new System.Drawing.Point(326, 118);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(96, 71);
@@ -262,7 +303,7 @@
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button5.Location = new System.Drawing.Point(384, 123);
+            this.button5.Location = new System.Drawing.Point(225, 118);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 71);
@@ -277,7 +318,7 @@
             this.btnMlijeko1l.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMlijeko1l.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMlijeko1l.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMlijeko1l.Location = new System.Drawing.Point(283, 123);
+            this.btnMlijeko1l.Location = new System.Drawing.Point(124, 118);
             this.btnMlijeko1l.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMlijeko1l.Name = "btnMlijeko1l";
             this.btnMlijeko1l.Size = new System.Drawing.Size(96, 71);
@@ -292,7 +333,7 @@
             this.btnHrana1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHrana1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHrana1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnHrana1.Location = new System.Drawing.Point(180, 123);
+            this.btnHrana1.Location = new System.Drawing.Point(21, 118);
             this.btnHrana1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHrana1.Name = "btnHrana1";
             this.btnHrana1.Size = new System.Drawing.Size(96, 71);
@@ -307,7 +348,7 @@
             this.btnSlatkisi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSlatkisi1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSlatkisi1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSlatkisi1.Location = new System.Drawing.Point(485, 28);
+            this.btnSlatkisi1.Location = new System.Drawing.Point(326, 23);
             this.btnSlatkisi1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSlatkisi1.Name = "btnSlatkisi1";
             this.btnSlatkisi1.Size = new System.Drawing.Size(96, 71);
@@ -322,7 +363,7 @@
             this.btnSok2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSok2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSok2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSok2.Location = new System.Drawing.Point(384, 28);
+            this.btnSok2.Location = new System.Drawing.Point(225, 23);
             this.btnSok2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSok2.Name = "btnSok2";
             this.btnSok2.Size = new System.Drawing.Size(96, 71);
@@ -337,7 +378,7 @@
             this.btnSok1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSok1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSok1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSok1.Location = new System.Drawing.Point(283, 28);
+            this.btnSok1.Location = new System.Drawing.Point(124, 23);
             this.btnSok1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSok1.Name = "btnSok1";
             this.btnSok1.Size = new System.Drawing.Size(96, 71);
@@ -352,7 +393,7 @@
             this.btnČokolada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnČokolada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnČokolada.ForeColor = System.Drawing.Color.Transparent;
-            this.btnČokolada.Location = new System.Drawing.Point(180, 28);
+            this.btnČokolada.Location = new System.Drawing.Point(21, 23);
             this.btnČokolada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnČokolada.Name = "btnČokolada";
             this.btnČokolada.Size = new System.Drawing.Size(96, 71);
@@ -394,12 +435,12 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgDjelatnici.Location = new System.Drawing.Point(3, 32);
+            this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgDjelatnici.Name = "dgDjelatnici";
             this.dgDjelatnici.RowHeadersWidth = 51;
             this.dgDjelatnici.RowTemplate.Height = 24;
-            this.dgDjelatnici.Size = new System.Drawing.Size(795, 270);
+            this.dgDjelatnici.Size = new System.Drawing.Size(795, 272);
             this.dgDjelatnici.TabIndex = 0;
             // 
             // menuDjelatnici
@@ -411,28 +452,28 @@
             this.toolsSObrisi});
             this.menuDjelatnici.Location = new System.Drawing.Point(3, 2);
             this.menuDjelatnici.Name = "menuDjelatnici";
-            this.menuDjelatnici.Size = new System.Drawing.Size(795, 30);
+            this.menuDjelatnici.Size = new System.Drawing.Size(795, 28);
             this.menuDjelatnici.TabIndex = 1;
             this.menuDjelatnici.Text = "menuDjelatnici";
             // 
             // toolSDodaj
             // 
             this.toolSDodaj.Name = "toolSDodaj";
-            this.toolSDodaj.Size = new System.Drawing.Size(64, 26);
+            this.toolSDodaj.Size = new System.Drawing.Size(64, 24);
             this.toolSDodaj.Text = "Dodaj";
             this.toolSDodaj.Click += new System.EventHandler(this.toolSDodaj_Click);
             // 
             // toolAzuriraj
             // 
             this.toolAzuriraj.Name = "toolAzuriraj";
-            this.toolAzuriraj.Size = new System.Drawing.Size(74, 26);
+            this.toolAzuriraj.Size = new System.Drawing.Size(74, 24);
             this.toolAzuriraj.Text = "Ažuriraj";
             this.toolAzuriraj.Click += new System.EventHandler(this.toolAzuriraj_Click);
             // 
             // toolsSObrisi
             // 
             this.toolsSObrisi.Name = "toolsSObrisi";
-            this.toolsSObrisi.Size = new System.Drawing.Size(62, 26);
+            this.toolsSObrisi.Size = new System.Drawing.Size(62, 24);
             this.toolsSObrisi.Text = "Obriši";
             this.toolsSObrisi.Click += new System.EventHandler(this.toolsSObrisi_Click);
             // 
@@ -525,13 +566,87 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolSChangeProfile});
+            this.menuStrip2.Location = new System.Drawing.Point(3, 273);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuProfil";
+            // 
+            // toolSChangeProfile
+            // 
+            this.toolSChangeProfile.Name = "toolSChangeProfile";
+            this.toolSChangeProfile.Size = new System.Drawing.Size(115, 24);
+            this.toolSChangeProfile.Text = "Izmjeni profil ";
+            // 
+            // lblRoleProfil
+            // 
+            this.lblRoleProfil.AutoSize = true;
+            this.lblRoleProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblRoleProfil.Location = new System.Drawing.Point(11, 215);
+            this.lblRoleProfil.Name = "lblRoleProfil";
+            this.lblRoleProfil.Size = new System.Drawing.Size(48, 20);
+            this.lblRoleProfil.TabIndex = 2;
+            this.lblRoleProfil.Text = "Role:";
+            // 
+            // lblBroj
+            // 
+            this.lblBroj.AutoSize = true;
+            this.lblBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBroj.Location = new System.Drawing.Point(11, 185);
+            this.lblBroj.Name = "lblBroj";
+            this.lblBroj.Size = new System.Drawing.Size(113, 20);
+            this.lblBroj.TabIndex = 3;
+            this.lblBroj.Text = "Broj mobitela:";
+            // 
+            // lblOsobniPoddaci
+            // 
+            this.lblOsobniPoddaci.AutoSize = true;
+            this.lblOsobniPoddaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOsobniPoddaci.Location = new System.Drawing.Point(10, 70);
+            this.lblOsobniPoddaci.Name = "lblOsobniPoddaci";
+            this.lblOsobniPoddaci.Size = new System.Drawing.Size(166, 20);
+            this.lblOsobniPoddaci.TabIndex = 4;
+            this.lblOsobniPoddaci.Text = "Moji osobni podaci";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblEmail.Location = new System.Drawing.Point(11, 149);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(56, 20);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblDatumRodenja
+            // 
+            this.lblDatumRodenja.AutoSize = true;
+            this.lblDatumRodenja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDatumRodenja.Location = new System.Drawing.Point(11, 116);
+            this.lblDatumRodenja.Name = "lblDatumRodenja";
+            this.lblDatumRodenja.Size = new System.Drawing.Size(124, 20);
+            this.lblDatumRodenja.TabIndex = 6;
+            this.lblDatumRodenja.Text = "Datum rođenja:";
+            // 
             // DjelatnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 477);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabAdmin);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblExit);
             this.Controls.Add(this.lblAdmin);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -540,6 +655,8 @@
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.DjelatnikForm_Load);
             this.tabAdmin.ResumeLayout(false);
+            this.tabProfil.ResumeLayout(false);
+            this.tabProfil.PerformLayout();
             this.Promet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).EndInit();
             this.Blagajna.ResumeLayout(false);
@@ -553,6 +670,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,5 +710,15 @@
         private System.Windows.Forms.ToolStripMenuItem toolSDodaj;
         private System.Windows.Forms.ToolStripMenuItem toolAzuriraj;
         private System.Windows.Forms.ToolStripMenuItem toolsSObrisi;
+        private System.Windows.Forms.TabPage tabProfil;
+        private System.Windows.Forms.Label lblDobrosao;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolSChangeProfile;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lblRoleProfil;
+        private System.Windows.Forms.Label lblDatumRodenja;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblOsobniPoddaci;
+        private System.Windows.Forms.Label lblBroj;
     }
 }

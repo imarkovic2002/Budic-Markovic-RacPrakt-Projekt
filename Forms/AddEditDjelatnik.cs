@@ -68,6 +68,9 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             djelatnik.Lozinka=txtBoxLozinka.Text;
             djelatnik.DatumZaposlenja = dTPZaposlenja.Value;
             djelatnik.Role = cmbRole.SelectedItem.ToString();
+
+            
+
             if (Djelatnik_ID != 0)
             {
                 _djelatnikStore.AzurirajDjelatnika(djelatnik);

@@ -43,6 +43,11 @@ namespace Budić_Marković_RacPrakt_Projekt
             dgSkladiste.DataSource = proizvodi;
             this.DialogResult = DialogResult.OK;
 
+            lblDobrosao.Text =lblDobrosao.Text + djelatnik.Ime.ToString() + " " + djelatnik.Prezime.ToString();
+            lblDatumRodenja.Text = lblDatumRodenja.Text + " " + djelatnik.DatumRodjenja.ToShortDateString();
+            lblEmail.Text = lblEmail.Text + " " + djelatnik.Email.ToString();
+            lblBroj.Text += " " + djelatnik.BrojMobitela.ToString();
+            lblRoleProfil.Text += " " + djelatnik.Role.ToString();
         }
 
         private void lblBack_Click(object sender, EventArgs e)
@@ -232,10 +237,14 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgDjelatnici.DataSource = getDjelatnici();
             }
         }
-
+       
         private void DjelatnikForm_Load(object sender, EventArgs e)
         {
 
         }
+
+        
+
     }
+
 }
