@@ -24,6 +24,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         private SqlConnectionFactory connectionFactory;
         private ProizvodStore _proizvodStore;
         private DjelatnikStore _djelatnikStore;
+        private TransakcijaStore _transakcijaStore;
         private Djelatnik djelatnikUse;
         public DjelatnikForm(Djelatnik djelatnik)
         {
@@ -33,13 +34,16 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[1].Visible = false;
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
-            dgPromet.DataSource = getTransakcije();
-            dgDjelatnici.DataSource = getDjelatnici();
+           
             OpenFormBasedOnRole(djelatnik);
             if (_proizvodStore == null)
                 _proizvodStore = new ProizvodStore();
             if (_djelatnikStore == null)    
                 _djelatnikStore = new DjelatnikStore();
+            if(_transakcijaStore== null)
+                _transakcijaStore=new TransakcijaStore();
+            dgPromet.DataSource = _transakcijaStore.getTransakcije();
+            dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
             this.DialogResult = DialogResult.OK;
@@ -75,80 +79,13 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
 
         }
-        List<Transakcija> getTransakcije()
-        {
-            List<Transakcija> tranksakcija = new List<Transakcija>();
-            using (MySqlConnection connection = connectionFactory.GetNewConnection())
-            {
-                string query = "SELECT DATE_FORMAT(datum_transakcije, '%Y-%m-%d') AS datum_transakcije," +
-                    " SUM(ukupni_iznos) AS UkupniIznosKupnje\r\nFROM transakcija\r\nGROUP BY DATE_FORMAT(datum_transakcije," +
-                    " '%Y-%m-%d')\r\nORDER BY datum_transakcije;\r\n";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-
-
-                    using (var reader = command.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-                            Transakcija trank = new Transakcija();
-                            trank.Datum_transakcije = reader.GetDateTime("datum_transakcije");
-                            trank.Ukupni_iznos = reader.GetFloat("UkupniIznosKupnje");
-                            tranksakcija.Add(trank);
-
-
-                        }
-                    }
-                }
-            }
-            return tranksakcija;
-        }
-
-        List<Djelatnik> getDjelatnici()
-        {
-            List<Djelatnik> djelatnici = new List<Djelatnik>();
-            using (MySqlConnection connection = connectionFactory.GetNewConnection())
-            {
-                string query = "SELECT * FROM  djelatnik";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-
-
-                    using (var reader = command.ExecuteReader())
-                    {
-
-                        while (reader.Read())
-                        {
-
-                            Djelatnik djelatnik = new Djelatnik();
-                            djelatnik.ID = reader.GetInt32("id");
-                            djelatnik.Ime = reader.GetString("ime");
-                            djelatnik.Prezime = reader.GetString("prezime");
-                            djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
-                            djelatnik.OIB = reader.GetString("oib");
-                            djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
-                            djelatnik.Email = reader.GetString("email");
-                            djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
-                            djelatnik.Role = reader.GetString("role");
-                            djelatnik.Lozinka = reader.GetString("lozinka");
-                            djelatnici.Add(djelatnik);
-
-
-
-                        }
-                    }
-                }
-                return djelatnici;
-            }
-        }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
 
             if (addEditDjelatnik.ShowDialog() == DialogResult.OK)
             {
-                dgDjelatnici.DataSource = getDjelatnici();
+                dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             }
         }
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -194,7 +131,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             if (addEditDjelatnik.ShowDialog() == DialogResult.OK)
             {
-                dgDjelatnici.DataSource = getDjelatnici();
+                dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             }
         }
         private void toolAzuriraj_Click(object sender, EventArgs e)
@@ -214,7 +151,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             if (addEditDjelatnik.ShowDialog() == DialogResult.OK)
             {
-                dgDjelatnici.DataSource = getDjelatnici();
+                dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             }
         }
         private void toolsSObrisi_Click(object sender, EventArgs e)
@@ -223,12 +160,11 @@ namespace Budić_Marković_RacPrakt_Projekt
             {
                 int selectedId = Convert.ToInt32(dgDjelatnici.SelectedRows[0].Cells["ID"].Value);
                 _djelatnikStore.ObrisiDjelatnika(selectedId);
-                dgDjelatnici.DataSource = getDjelatnici();
+                dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             }
         }
         private void DjelatnikForm_Load(object sender, EventArgs e)
         {
-
         }
         private void toolSChangeProfile_Click(object sender, EventArgs e)
         {

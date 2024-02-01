@@ -12,6 +12,7 @@ namespace Blagajna.DB.Stores
 {
     public class DjelatnikStore
     {
+        private SqlConnectionFactory connectionFactory=new SqlConnectionFactory();
         public void DodajDjelatnika(Djelatnik djelatnik)
         {
             var connectionManager = new SqlConnectionFactory();
@@ -98,6 +99,43 @@ namespace Blagajna.DB.Stores
 
                     connectionManager.CloseConnection(conn);
                 }
+            }
+        }
+        public List<Djelatnik> getDjelatnici()
+        {
+            List<Djelatnik> djelatnici = new List<Djelatnik>();
+            using (MySqlConnection connection = connectionFactory.GetNewConnection())
+            {
+                string query = "SELECT * FROM  djelatnik";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+
+
+                    using (var reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            Djelatnik djelatnik = new Djelatnik();
+                            djelatnik.ID = reader.GetInt32("id");
+                            djelatnik.Ime = reader.GetString("ime");
+                            djelatnik.Prezime = reader.GetString("prezime");
+                            djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
+                            djelatnik.OIB = reader.GetString("oib");
+                            djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
+                            djelatnik.Email = reader.GetString("email");
+                            djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
+                            djelatnik.Role = reader.GetString("role");
+                            djelatnik.Lozinka = reader.GetString("lozinka");
+                            djelatnici.Add(djelatnik);
+
+
+
+                        }
+                    }
+                }
+                return djelatnici;
             }
         }
     }
