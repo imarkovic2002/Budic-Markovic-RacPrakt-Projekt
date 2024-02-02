@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgDanasnjiPromet = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDanasnjiPromet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgDanasnjiPromet
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 450);
-            this.dataGridView1.TabIndex = 0;
+            this.dgDanasnjiPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDanasnjiPromet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgDanasnjiPromet.Location = new System.Drawing.Point(0, 0);
+            this.dgDanasnjiPromet.Name = "dgDanasnjiPromet";
+            this.dgDanasnjiPromet.RowHeadersWidth = 51;
+            this.dgDanasnjiPromet.RowTemplate.Height = 24;
+            this.dgDanasnjiPromet.Size = new System.Drawing.Size(800, 450);
+            this.dgDanasnjiPromet.TabIndex = 0;
             // 
             // DnevniIzvjestajForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgDanasnjiPromet);
             this.Name = "DnevniIzvjestajForm";
             this.Text = "DnevniIzvjestajForm";
             this.Load += new System.EventHandler(this.DnevniIzvjestajForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDanasnjiPromet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgDanasnjiPromet;
     }
 }

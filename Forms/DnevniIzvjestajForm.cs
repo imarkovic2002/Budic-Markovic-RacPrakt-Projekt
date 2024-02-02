@@ -19,7 +19,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             InitializeComponent();
             if (store == null)
                 store=new DnevniIzvjestajStore();
-            dataGridView1.DataSource = store.getDnevniIzvjestaj() ;
+            dgDanasnjiPromet.DataSource = store.getDnevniIzvjestaj() ;
         }
 
         private void DnevniIzvjestajForm_Load(object sender, EventArgs e)

@@ -27,14 +27,15 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
 
-            btnProizvod5.Click += (sender, e) => DodajProizvodUKosaricu(1);
-            btnProizvod6.Click += (sender, e) => DodajProizvodUKosaricu(2);
-            btnProizvod4.Click += (sender, e) => DodajProizvodUKosaricu(3);
-            btnProizvod2.Click += (sender, e) => DodajProizvodUKosaricu(4);
-            btnProizvod3.Click += (sender, e) => DodajProizvodUKosaricu(5);
-            btnProizvod1.Click += (sender, e) => DodajProizvodUKosaricu(6);
+            btnProizvod1.Click += (sender, e) => DodajProizvodUKosaricu(1);
+            btnProizvod2.Click += (sender, e) => DodajProizvodUKosaricu(2);
+            btnProizvod3.Click += (sender, e) => DodajProizvodUKosaricu(3);
+            btnProizvod4.Click += (sender, e) => DodajProizvodUKosaricu(4);
+            btnProizvod5.Click += (sender, e) => DodajProizvodUKosaricu(5);
+            btnProizvod6.Click += (sender, e) => DodajProizvodUKosaricu(6);
 
-                
+
+
             OpenFormBasedOnRole(djelatnik);
             if (_proizvodStore == null)
                 _proizvodStore = new ProizvodStore();
@@ -123,10 +124,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                 dgSkladiste.DataSource = _proizvodStore.getProizvods();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
         private void toolSDodaj_Click(object sender, EventArgs e)
         {
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
@@ -164,9 +162,6 @@ namespace Budić_Marković_RacPrakt_Projekt
                 _djelatnikStore.ObrisiDjelatnika(selectedId);
                 dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             }
-        }
-        private void DjelatnikForm_Load(object sender, EventArgs e)
-        {
         }
         private void toolSChangeProfile_Click(object sender, EventArgs e)
         {
@@ -218,7 +213,8 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void OsvjeziPrikazKosarice()
         {
-            float sum = 0;
+            float sum = 0;  
+
             listBoxKosarica.Items.Clear();
             foreach (Proizvod proizvod in kosarica)
             {
@@ -241,19 +237,18 @@ namespace Budić_Marković_RacPrakt_Projekt
             {
                 sum = sum + proizvod.Cijena ;
             }
-            if (Convert.ToInt32(textBoxDano.Text) != 0) 
+            if (float.Parse(textBoxDano.Text) != 0) 
             {
                 float ostatak = float.Parse(textBoxDano.Text) - sum;
-                MessageBox.Show("Vrati ostatak od " + ostatak);
-                _transakcijaStore.dodajTransakciju(sum, djelatnikUse,"gotovina");
+                MessageBox.Show("Vrati ostatak od " + ostatak + "€");
+                _transakcijaStore.dodajTransakciju(sum, djelatnikUse,"Gotovina");
             }
             else
             {
                 MessageBox.Show("Odabrali ste plaćanje karticom.");
-                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "kartica");
+                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "Kartica");
             }
-        
-            
+
             kosarica.Clear();   
             listBoxKosarica.Items.Clear();
             textBoxDano.Text = "0";

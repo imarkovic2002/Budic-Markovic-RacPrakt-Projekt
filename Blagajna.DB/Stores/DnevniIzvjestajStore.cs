@@ -16,13 +16,12 @@ namespace Blagajna.DB.Stores
             List<DnevniIzvjestaj> dnevniIzvjestaj = new List<DnevniIzvjestaj>();
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
-                string query = "SELECT DATE_FORMAT(datum_transakcije, '%Y-%m-%d') AS" +
-                    " datum_transakcije,\r\nSUM(transakcija.ukupni_iznos) AS UkupniIznosKupnje," +
-                    "\r\nSUM(storno.ukupni_iznos) AS UskupniIznosStorna" +
-                    "\r\nFROM transakcija,storno\r\n" +
-                    "WHERE transakcija.datum_transakcije=storno.datum_storna || transakcija.storno_id=0\r\n" +
-                    "GROUP BY DATE_FORMAT(datum_transakcije, '%Y-%m-%d')\r\n" +
-                    "ORDER BY datum_transakcije;";
+                string query = "SELECT DATE_FORMAT(transakcija.datum_transakcije, '%Y-%m-%d') AS datum_transakcije, " +
+                    "SUM(transakcija.ukupni_iznos) AS UkupniIznosKupnje, " +
+                    "COALESCE(SUM(storno.ukupni_iznos), 0) AS UskupniIznosStorna FROM transakcija " +
+                    "LEFT JOIN storno ON transakcija.storno_id = storno.id " +
+                    "WHERE transakcija.datum_transakcije = storno.datum_storna OR transakcija.storno_id = 0 " +
+                    "GROUP BY DATE_FORMAT(transakcija.datum_transakcije, '%Y-%m-%d') ORDER BY datum_transakcije;";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
 
