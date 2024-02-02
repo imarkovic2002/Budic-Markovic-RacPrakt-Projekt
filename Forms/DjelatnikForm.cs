@@ -254,7 +254,7 @@ namespace Budić_Marković_RacPrakt_Projekt
             }
         
             
-            
+            kosarica.Clear();   
             listBoxKosarica.Items.Clear();
             textBoxDano.Text = "0";
             lbCijena.Text = "0";
