@@ -187,6 +187,19 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             }
         }
+
+        private void stornoBlagajnaMenuStrip_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Storno storno = new Storno();
+                storno.Id_transakcija = Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ID"].Value);
+                storno.Datum_storno = DateTime.Now;
+                storno.Ukupni_iznos = float.Parse(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value.ToString());
+                _stornoStore.DodajStorno(storno);
+
+            }
+        }
     }
 
 }

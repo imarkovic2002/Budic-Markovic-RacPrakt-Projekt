@@ -44,6 +44,8 @@
             this.toolSChangeProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.Promet = new System.Windows.Forms.TabPage();
             this.dgPromet = new System.Windows.Forms.DataGridView();
+            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
+            this.stornoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Blagajna = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -71,13 +73,14 @@
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.stornoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.stornoBlagajnaMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAdmin.SuspendLayout();
             this.tabProfil.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.Promet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
+            this.menuStrip3.SuspendLayout();
             this.Blagajna.SuspendLayout();
             this.Djelatnici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).BeginInit();
@@ -85,7 +88,7 @@
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip3.SuspendLayout();
+            this.menuStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -249,6 +252,24 @@
             this.dgPromet.Size = new System.Drawing.Size(795, 272);
             this.dgPromet.TabIndex = 0;
             // 
+            // menuStrip3
+            // 
+            this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stornoToolStripMenuItem});
+            this.menuStrip3.Location = new System.Drawing.Point(3, 2);
+            this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip3.TabIndex = 1;
+            this.menuStrip3.Text = "menuStrip3";
+            // 
+            // stornoToolStripMenuItem
+            // 
+            this.stornoToolStripMenuItem.Name = "stornoToolStripMenuItem";
+            this.stornoToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.stornoToolStripMenuItem.Text = "Storno";
+            this.stornoToolStripMenuItem.Click += new System.EventHandler(this.stornoToolStripMenuItem_Click);
+            // 
             // Blagajna
             // 
             this.Blagajna.Controls.Add(this.button10);
@@ -263,6 +284,7 @@
             this.Blagajna.Controls.Add(this.btnSok2);
             this.Blagajna.Controls.Add(this.btnSok1);
             this.Blagajna.Controls.Add(this.btnČokolada);
+            this.Blagajna.Controls.Add(this.menuStrip4);
             this.Blagajna.Location = new System.Drawing.Point(4, 25);
             this.Blagajna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Blagajna.Name = "Blagajna";
@@ -591,23 +613,23 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip3
+            // menuStrip4
             // 
-            this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stornoToolStripMenuItem});
-            this.menuStrip3.Location = new System.Drawing.Point(3, 2);
-            this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(795, 28);
-            this.menuStrip3.TabIndex = 1;
-            this.menuStrip3.Text = "menuStrip3";
+            this.menuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stornoBlagajnaMenuStrip});
+            this.menuStrip4.Location = new System.Drawing.Point(3, 2);
+            this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip4.TabIndex = 24;
+            this.menuStrip4.Text = "menuStrip4";
             // 
-            // stornoToolStripMenuItem
+            // stornoBlagajnaMenuStrip
             // 
-            this.stornoToolStripMenuItem.Name = "stornoToolStripMenuItem";
-            this.stornoToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.stornoToolStripMenuItem.Text = "Storno";
-            this.stornoToolStripMenuItem.Click += new System.EventHandler(this.stornoToolStripMenuItem_Click);
+            this.stornoBlagajnaMenuStrip.Name = "stornoBlagajnaMenuStrip";
+            this.stornoBlagajnaMenuStrip.Size = new System.Drawing.Size(67, 24);
+            this.stornoBlagajnaMenuStrip.Text = "Storno";
+            this.stornoBlagajnaMenuStrip.Click += new System.EventHandler(this.stornoBlagajnaMenuStrip_Click);
             // 
             // DjelatnikForm
             // 
@@ -632,7 +654,10 @@
             this.Promet.ResumeLayout(false);
             this.Promet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).EndInit();
+            this.menuStrip3.ResumeLayout(false);
+            this.menuStrip3.PerformLayout();
             this.Blagajna.ResumeLayout(false);
+            this.Blagajna.PerformLayout();
             this.Djelatnici.ResumeLayout(false);
             this.Djelatnici.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).EndInit();
@@ -643,8 +668,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip3.ResumeLayout(false);
-            this.menuStrip3.PerformLayout();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -695,5 +720,7 @@
         private System.Windows.Forms.Label lblBroj;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem stornoToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem stornoBlagajnaMenuStrip;
     }
 }

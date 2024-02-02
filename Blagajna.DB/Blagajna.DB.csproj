@@ -78,6 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlConnectionFactory.cs" />
     <Compile Include="Stores\DjelatnikStore.cs" />
+    <Compile Include="Stores\DnevniIzvjestajStorno.cs" />
     <Compile Include="Stores\ProizvodStore.cs" />
     <Compile Include="Stores\StornoStore.cs" />
     <Compile Include="Stores\TransakcijaStore.cs" />

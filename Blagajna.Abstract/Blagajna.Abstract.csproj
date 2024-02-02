@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Djelatnik.cs" />
+    <Compile Include="Models\DnevniIzvjestaj.cs" />
     <Compile Include="Models\Proizvod.cs" />
     <Compile Include="Models\Storno.cs" />
     <Compile Include="Models\Transakcija.cs" />
