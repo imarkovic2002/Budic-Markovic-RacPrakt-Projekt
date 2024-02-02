@@ -23,11 +23,11 @@ namespace Budić_Marković_RacPrakt_Projekt
             InitializeComponent();
             
             connectionFactory = new SqlConnectionFactory();
-            tabAdmin.TabPages.Remove(tabProfil);
-            tabAdmin.TabPages.Remove(Promet);
-            tabAdmin.TabPages.Remove(Blagajna);
-            tabAdmin.TabPages.Remove(Djelatnici);
-            tabAdmin.TabPages.Remove(Skladiste);
+            tabDjelatnici.TabPages.Remove(Profil);
+            tabDjelatnici.TabPages.Remove(Promet);
+            tabDjelatnici.TabPages.Remove(Blagajna);
+            tabDjelatnici.TabPages.Remove(Djelatnici);
+            tabDjelatnici.TabPages.Remove(Skladiste);
            
             btnProizvod1.Click += (sender, e) => DodajProizvodUKosaricu(1);
             btnProizvod2.Click += (sender, e) => DodajProizvodUKosaricu(2);
@@ -65,16 +65,16 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             if (role.ToLower() == "admin")
             {
-                tabAdmin.TabPages.Add(tabProfil);
-                tabAdmin.TabPages.Add(Promet);
-                tabAdmin.TabPages.Add(Blagajna);
-                tabAdmin.TabPages.Add(Djelatnici);
-                tabAdmin.TabPages.Add(Skladiste);
+                tabDjelatnici.TabPages.Add(Profil);
+                tabDjelatnici.TabPages.Add(Promet);
+                tabDjelatnici.TabPages.Add(Blagajna);
+                tabDjelatnici.TabPages.Add(Djelatnici);
+                tabDjelatnici.TabPages.Add(Skladiste);
             }
             else if (role.ToLower() == "blagajnik")
             {
-                tabAdmin.TabPages.Add(tabProfil);
-                tabAdmin.TabPages.Add(Blagajna);
+                tabDjelatnici.TabPages.Add(Profil);
+                tabDjelatnici.TabPages.Add(Blagajna);
 
             }
         }
@@ -84,10 +84,6 @@ namespace Budić_Marković_RacPrakt_Projekt
             System.Windows.Forms.Application.Exit();
         }
        
-        private void Promet_Click(object sender, EventArgs e)
-        {
-
-        }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(new Djelatnik());
@@ -210,7 +206,6 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void DodajProizvodUKosaricu(int proizvodIndex)
         {
-            // Ako proizvodIndex nije u ispravnom rasponu, prekinite izvršenje
             if (proizvodIndex < 1 || proizvodIndex > dgSkladiste.Rows.Count)
             {
                 MessageBox.Show("Neispravan indeks proizvoda.");
@@ -218,6 +213,12 @@ namespace Budić_Marković_RacPrakt_Projekt
             }
 
             Proizvod odabraniProizvod = dgSkladiste.Rows[proizvodIndex - 1].DataBoundItem as Proizvod;
+
+            if(odabraniProizvod.Kolicina == "0")
+            {
+                MessageBox.Show($"Proizvod '{odabraniProizvod.Naziv}' trenutno nije raspoloživ.", "Nedostupan proizvod", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             kosarica.Add(odabraniProizvod);
 
@@ -232,7 +233,7 @@ namespace Budić_Marković_RacPrakt_Projekt
             foreach (Proizvod proizvod in kosarica)
             {
                 sum = sum + proizvod.Cijena;
-                listBoxKosarica.Items.Add($"{proizvod.Naziv} - Količina: {proizvod.Kolicina} - Cijena: {proizvod.Cijena}");
+                listBoxKosarica.Items.Add($"{proizvod.Naziv} - Cijena: {proizvod.Cijena}");
             }
             lbCijena.Text = sum.ToString();
         }
