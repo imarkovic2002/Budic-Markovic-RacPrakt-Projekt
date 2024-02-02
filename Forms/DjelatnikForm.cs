@@ -21,12 +21,14 @@ namespace Budić_Marković_RacPrakt_Projekt
         public DjelatnikForm(Djelatnik djelatnik)
         {
             InitializeComponent();
+            
             connectionFactory = new SqlConnectionFactory();
-            tabAdmin.TabPages[0].Visible = false;
-            tabAdmin.TabPages[1].Visible = false;
-            tabAdmin.TabPages[2].Visible = false;
-            tabAdmin.TabPages[3].Visible = false;
-
+            tabAdmin.TabPages.Remove(tabProfil);
+            tabAdmin.TabPages.Remove(Promet);
+            tabAdmin.TabPages.Remove(Blagajna);
+            tabAdmin.TabPages.Remove(Djelatnici);
+            tabAdmin.TabPages.Remove(Skladiste);
+           
             btnProizvod1.Click += (sender, e) => DodajProizvodUKosaricu(1);
             btnProizvod2.Click += (sender, e) => DodajProizvodUKosaricu(2);
             btnProizvod3.Click += (sender, e) => DodajProizvodUKosaricu(3);
@@ -36,48 +38,52 @@ namespace Budić_Marković_RacPrakt_Projekt
 
 
 
-            OpenFormBasedOnRole(djelatnik);
+            OpenFormBasedOnRole(djelatnik.Role);
             if (_proizvodStore == null)
                 _proizvodStore = new ProizvodStore();
-            if (_djelatnikStore == null)    
+            if (_djelatnikStore == null)
                 _djelatnikStore = new DjelatnikStore();
-            if(_transakcijaStore== null)
-                _transakcijaStore=new TransakcijaStore();
-            if(_stornoStore == null)
-                _stornoStore=new StornoStore();
+            if (_transakcijaStore == null)
+                _transakcijaStore = new TransakcijaStore();
+            if (_stornoStore == null)
+                _stornoStore = new StornoStore();
             dgPromet.DataSource = _transakcijaStore.getTransakcije();
             dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
             this.DialogResult = DialogResult.OK;
             djelatnikUse = new Djelatnik();
-            
+
             djelatnikUse = djelatnik;
-            lblDobrosao.Text =lblDobrosao.Text + djelatnikUse.Ime.ToString() + " " + djelatnik.Prezime.ToString();
+            lblDobrosao.Text = lblDobrosao.Text + djelatnikUse.Ime.ToString() + " " + djelatnik.Prezime.ToString();
             lblDatumRodenja.Text = lblDatumRodenja.Text + " " + djelatnik.DatumRodjenja.ToShortDateString();
             lblEmail.Text = lblEmail.Text + " " + djelatnik.Email.ToString();
             lblBroj.Text += " " + djelatnik.BrojMobitela.ToString();
             lblRoleProfil.Text += " " + djelatnik.Role.ToString();
+        }
+        private void OpenFormBasedOnRole(string role)
+        {
+            if (role.ToLower() == "admin")
+            {
+                tabAdmin.TabPages.Add(tabProfil);
+                tabAdmin.TabPages.Add(Promet);
+                tabAdmin.TabPages.Add(Blagajna);
+                tabAdmin.TabPages.Add(Djelatnici);
+                tabAdmin.TabPages.Add(Skladiste);
+            }
+            else if (role.ToLower() == "blagajnik")
+            {
+                tabAdmin.TabPages.Add(tabProfil);
+                tabAdmin.TabPages.Add(Blagajna);
+
+            }
         }
         private void lblBack_Click(object sender, EventArgs e)
         {
             this.Close();
             System.Windows.Forms.Application.Exit();
         }
-        private void OpenFormBasedOnRole(Djelatnik djelatnik)
-        {
-            if(djelatnik.Role.ToLower() == "admin ")
-            {
-                foreach (TabPage tabPage in tabAdmin.TabPages)
-                {
-                    tabPage.Visible = true;
-                }
-            }
-            else if (djelatnik.Role.ToLower() == "blagajnik")
-            {
-                tabAdmin.TabPages[1].Visible = true;
-            }
-        }
+       
         private void Promet_Click(object sender, EventArgs e)
         {
 
@@ -105,7 +111,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
             proizvod.Naziv = dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
-            proizvod.Cijena= float.Parse(dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString());
+            proizvod.Cijena = float.Parse(dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString());
             proizvod.Kolicina = dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
 
             AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(proizvod);
@@ -168,15 +174,22 @@ namespace Budić_Marković_RacPrakt_Projekt
             AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(djelatnikUse);
 
             addEditDjelatnik.ShowDialog();
+            Djelatnik djelatnik = new Djelatnik();
+            djelatnik = _djelatnikStore.GetDjelatnik(djelatnikUse.ID);
+            lblDobrosao.Text = "Dobrodošao, " + djelatnikUse.Ime.ToString() + " " + djelatnik.Prezime.ToString();
+            lblDatumRodenja.Text = "Datum rođenja: " + djelatnik.DatumRodjenja.ToShortDateString();
+            lblEmail.Text = "Email: " + djelatnik.Email.ToString();
+            lblBroj.Text = "Broj mobitela: " + djelatnik.BrojMobitela.ToString();
+            lblRoleProfil.Text = "Role: " + djelatnik.Role.ToString();
         }
         private void stornoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Storno storno = new Storno();   
-                storno.Id_transakcija= Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ID"].Value);
-                storno.Datum_storno=DateTime.Now;
-                storno.Ukupni_iznos= float.Parse(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value.ToString());
+                Storno storno = new Storno();
+                storno.Id_transakcija = Convert.ToInt32(dgPromet.SelectedRows[0].Cells["ID"].Value);
+                storno.Datum_storno = DateTime.Now;
+                storno.Ukupni_iznos = float.Parse(dgPromet.SelectedRows[0].Cells["ukupni_iznos"].Value.ToString());
                 _stornoStore.DodajStorno(storno);
 
             }
@@ -213,7 +226,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void OsvjeziPrikazKosarice()
         {
-            float sum = 0;  
+            float sum = 0;
 
             listBoxKosarica.Items.Clear();
             foreach (Proizvod proizvod in kosarica)
@@ -221,7 +234,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                 sum = sum + proizvod.Cijena;
                 listBoxKosarica.Items.Add($"{proizvod.Naziv} - Količina: {proizvod.Kolicina} - Cijena: {proizvod.Cijena}");
             }
-            lbCijena.Text=sum.ToString();
+            lbCijena.Text = sum.ToString();
         }
 
         private void btnProizvod1_Click(object sender, EventArgs e)
@@ -232,36 +245,60 @@ namespace Budić_Marković_RacPrakt_Projekt
         private void btnIspisiRacun_Click(object sender, EventArgs e)
         {
             float sum = 0;
-           
-            foreach   (Proizvod proizvod in kosarica)
+
+            foreach (Proizvod proizvod in kosarica)
             {
-                sum = sum + proizvod.Cijena ;
+                sum = sum + proizvod.Cijena;
             }
-            if (float.Parse(textBoxDano.Text) != 0) 
+            if (float.Parse(textBoxDano.Text) != 0)
             {
                 float ostatak = float.Parse(textBoxDano.Text) - sum;
                 MessageBox.Show("Vrati ostatak od " + ostatak + "€");
-                _transakcijaStore.dodajTransakciju(sum, djelatnikUse,"Gotovina");
+                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "Gotovina");
             }
             else
             {
                 MessageBox.Show("Odabrali ste plaćanje karticom.");
                 _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "Kartica");
             }
+            foreach (Proizvod proizvod1 in kosarica)
+            {
+                Proizvod proizvodUpdate = new Proizvod();
+                proizvodUpdate = _proizvodStore.getProizvod(proizvod1.ID);
+                int kolicina = Convert.ToInt32(proizvodUpdate.Kolicina) - 1;
+                proizvodUpdate.Kolicina = kolicina.ToString();
+                _proizvodStore.AzurirajProizvod(proizvodUpdate);
 
-            kosarica.Clear();   
+            }
+            kosarica.Clear();
             listBoxKosarica.Items.Clear();
             textBoxDano.Text = "0";
             lbCijena.Text = "0";
             dgPromet.DataSource = _transakcijaStore.getTransakcije();
+            dgSkladiste.DataSource = _proizvodStore.getProizvods();
 
 
         }
 
         private void današnjiPrometToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DnevniIzvjestajForm dnevniIzvjestajForm=new DnevniIzvjestajForm();
+            DnevniIzvjestajForm dnevniIzvjestajForm = new DnevniIzvjestajForm();
             dnevniIzvjestajForm.Show();
+        }
+
+        private void btnUkloni_Click(object sender, EventArgs e)
+        {
+            if (listBoxKosarica.SelectedIndex != -1)
+            {
+                Proizvod proizvodToRemove = kosarica[listBoxKosarica.SelectedIndex];
+                kosarica.RemoveAt(listBoxKosarica.SelectedIndex);
+
+              
+                OsvjeziPrikazKosarice();
+
+              
+               
+            }
         }
     }
 }

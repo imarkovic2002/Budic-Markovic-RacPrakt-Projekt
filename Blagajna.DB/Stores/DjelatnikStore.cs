@@ -138,5 +138,47 @@ namespace Blagajna.DB.Stores
                 return djelatnici;
             }
         }
+        public Djelatnik GetDjelatnik(int djelatnik_id)
+        {
+            var connectionManager = new SqlConnectionFactory();
+            Djelatnik djelatnik= new Djelatnik();
+
+
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string query = String.Format("SELECT * FROM  djelatnik WHERE id=@Id");
+
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", djelatnik_id);
+                        using (var reader = command.ExecuteReader())
+                        {
+
+                            while (reader.Read())
+                            {
+
+                                djelatnik.ID = reader.GetInt32("id");
+                                djelatnik.Ime = reader.GetString("ime");
+                                djelatnik.Prezime = reader.GetString("prezime");
+                                djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
+                                djelatnik.OIB = reader.GetString("oib");
+                                djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
+                                djelatnik.Email = reader.GetString("email");
+                                djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
+                                djelatnik.Role = reader.GetString("role");
+                                djelatnik.Lozinka = reader.GetString("lozinka");
+                              
+
+
+                            }
+                        }
+                    }
+                }
+                connectionManager.CloseConnection(connection);
+            }
+            return djelatnik;
+        }
     }
 }

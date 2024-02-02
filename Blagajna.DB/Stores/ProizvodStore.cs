@@ -43,6 +43,41 @@ namespace Blagajna.DB.Stores
             }
             return proizvodList.ToList(); 
         }
+        public Proizvod getProizvod(int proizvod_id)
+        {
+            var connectionManager = new SqlConnectionFactory();
+             Proizvod proizvod = new Proizvod();
+
+
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string query = String.Format("SELECT id,naziv,kolicina,cijena FROM proizvod WHERE id=@Id");
+
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", proizvod_id);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            
+                            while (reader.Read())
+                            {
+                               
+                                proizvod.ID = reader.GetInt32("id");
+                                proizvod.Naziv = reader.GetString("naziv");
+                                proizvod.Kolicina = reader.GetString("kolicina");
+                                proizvod.Cijena = reader.GetFloat("cijena");
+
+                             
+                            }
+                        }
+                    }
+                }
+                connectionManager.CloseConnection(connection);
+            }
+            return proizvod;
+        }
 
         public void DodajProizvod (Proizvod proizvod)
         {

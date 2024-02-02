@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
@@ -83,6 +77,7 @@
             this.toolsAzuriraj = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnUkloni = new System.Windows.Forms.Button();
             this.tabAdmin.SuspendLayout();
             this.tabProfil.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -249,23 +244,7 @@
             // 
             // dgPromet
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPromet.Location = new System.Drawing.Point(3, 30);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -303,6 +282,7 @@
             // 
             // Blagajna
             // 
+            this.Blagajna.Controls.Add(this.btnUkloni);
             this.Blagajna.Controls.Add(this.lbCijena);
             this.Blagajna.Controls.Add(this.btnIspisiRacun);
             this.Blagajna.Controls.Add(this.textBoxDano);
@@ -339,9 +319,9 @@
             // 
             // btnIspisiRacun
             // 
-            this.btnIspisiRacun.Location = new System.Drawing.Point(591, 276);
+            this.btnIspisiRacun.Location = new System.Drawing.Point(658, 278);
             this.btnIspisiRacun.Name = "btnIspisiRacun";
-            this.btnIspisiRacun.Size = new System.Drawing.Size(154, 23);
+            this.btnIspisiRacun.Size = new System.Drawing.Size(124, 23);
             this.btnIspisiRacun.TabIndex = 28;
             this.btnIspisiRacun.Text = "Ispiši Racun";
             this.btnIspisiRacun.UseVisualStyleBackColor = true;
@@ -561,23 +541,7 @@
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -637,23 +601,7 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -702,6 +650,16 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnUkloni
+            // 
+            this.btnUkloni.Location = new System.Drawing.Point(522, 278);
+            this.btnUkloni.Name = "btnUkloni";
+            this.btnUkloni.Size = new System.Drawing.Size(117, 23);
+            this.btnUkloni.TabIndex = 30;
+            this.btnUkloni.Text = "Ukloni";
+            this.btnUkloni.UseVisualStyleBackColor = true;
+            this.btnUkloni.Click += new System.EventHandler(this.btnUkloni_Click);
             // 
             // DjelatnikForm
             // 
@@ -792,5 +750,6 @@
         private System.Windows.Forms.Button btnIspisiRacun;
         private System.Windows.Forms.ToolStripMenuItem današnjiPrometToolStripMenuItem;
         private System.Windows.Forms.Label lbCijena;
+        private System.Windows.Forms.Button btnUkloni;
     }
 }

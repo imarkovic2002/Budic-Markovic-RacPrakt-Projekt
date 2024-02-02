@@ -80,6 +80,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
                 _djelatnikStore.DodajDjelatnika(djelatnik);
             }
             this.DialogResult = DialogResult.OK;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
