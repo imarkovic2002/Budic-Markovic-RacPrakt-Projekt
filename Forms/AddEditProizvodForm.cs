@@ -31,9 +31,9 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
                 this.Text = "Ažuriraj podatak";
                 btnSave.Text = "Ažuriraj";
 
-                txtNaziv.Text = proizvod.naziv;
-                txtCijena.Text = proizvod.cijena;
-                txtKolicina.Text = proizvod.kolicina;
+                txtNaziv.Text = proizvod.Naziv;
+                txtCijena.Text = proizvod.Cijena;
+                txtKolicina.Text = proizvod.Kolicina;
                 Proizvod_Id = proizvod.ID;
             }
             else
@@ -49,9 +49,9 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
         {
             Proizvod proizvod= new Proizvod();
 
-            proizvod.naziv = txtNaziv.Text;
-            proizvod.cijena = txtCijena.Text;
-            proizvod.kolicina= txtKolicina.Text;
+            proizvod.Naziv = txtNaziv.Text;
+            proizvod.Cijena = txtCijena.Text;
+            proizvod.Kolicina= txtKolicina.Text;
             proizvod.ID = Proizvod_Id;
 
             if (Proizvod_Id != 0)

@@ -15,6 +15,7 @@ namespace Blagajna.DB.Stores
         {
             var connectionManager = new SqlConnectionFactory();
             List<Proizvod> proizvodList = new List<Proizvod>();
+            
 
             using (var connection = connectionManager.GetNewConnection())
             {
@@ -29,9 +30,9 @@ namespace Blagajna.DB.Stores
                             {
                                 Proizvod proizvod = new Proizvod();
                                 proizvod.ID = reader.GetInt32("id");
-                                proizvod.naziv = reader.GetString("naziv");
-                                proizvod.kolicina = reader.GetString("kolicina");
-                                proizvod.cijena = reader.GetString("cijena");
+                                proizvod.Naziv = reader.GetString("naziv");
+                                proizvod.Kolicina = reader.GetString("kolicina");
+                                proizvod.Cijena = reader.GetString("cijena");
 
                                 proizvodList.Add(proizvod);
                             }
@@ -56,9 +57,9 @@ namespace Blagajna.DB.Stores
 
                     using (var command = new MySqlCommand(upit, con))
                     {
-                        command.Parameters.AddWithValue("@Naziv", proizvod.naziv);
-                        command.Parameters.AddWithValue("@Cijena", proizvod.cijena);
-                        command.Parameters.AddWithValue("@Kolicina", proizvod.kolicina);
+                        command.Parameters.AddWithValue("@Naziv", proizvod.Naziv);
+                        command.Parameters.AddWithValue("@Cijena", proizvod.Cijena);
+                        command.Parameters.AddWithValue("@Kolicina", proizvod.Kolicina);
 
                         command.ExecuteNonQuery();
                     }
@@ -102,9 +103,9 @@ namespace Blagajna.DB.Stores
                     using (var command = new MySqlCommand(upit, connection))
                     {
                         command.Parameters.AddWithValue("@Id", proizvod.ID);
-                        command.Parameters.AddWithValue("@Naziv", proizvod.naziv);
-                        command.Parameters.AddWithValue("@Cijena", proizvod.cijena);
-                        command.Parameters.AddWithValue("@Kolicina", proizvod.kolicina);
+                        command.Parameters.AddWithValue("@Naziv", proizvod.Naziv);
+                        command.Parameters.AddWithValue("@Cijena", proizvod.Cijena);
+                        command.Parameters.AddWithValue("@Kolicina", proizvod.Kolicina);
 
                         command.ExecuteNonQuery();
                     }

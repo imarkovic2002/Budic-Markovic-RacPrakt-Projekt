@@ -2,19 +2,9 @@
 using Blagajna.DB;
 using Blagajna.DB.Stores;
 using Budić_Marković_RacPrakt_Projekt.Forms;
-using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Budić_Marković_RacPrakt_Projekt
@@ -27,6 +17,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         private TransakcijaStore _transakcijaStore;
         private StornoStore _stornoStore;
         private Djelatnik djelatnikUse;
+        private List<Proizvod> kosarica = new List<Proizvod>();
         public DjelatnikForm(Djelatnik djelatnik)
         {
             InitializeComponent();
@@ -35,7 +26,15 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[1].Visible = false;
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
-           
+
+            btnHrana1.Click += (sender, e) => DodajProizvodUKosaricu(1);
+            btnMlijeko1l.Click += (sender, e) => DodajProizvodUKosaricu(2);
+            btnSlatkisi1.Click += (sender, e) => DodajProizvodUKosaricu(3);
+            btnSok1.Click += (sender, e) => DodajProizvodUKosaricu(4);
+            btnSok2.Click += (sender, e) => DodajProizvodUKosaricu(5);
+            btnČokolada.Click += (sender, e) => DodajProizvodUKosaricu(6);
+
+                
             OpenFormBasedOnRole(djelatnik);
             if (_proizvodStore == null)
                 _proizvodStore = new ProizvodStore();
@@ -104,9 +103,9 @@ namespace Budić_Marković_RacPrakt_Projekt
             Proizvod proizvod = new Proizvod();
 
             proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
-            proizvod.naziv = dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
-            proizvod.cijena = dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
-            proizvod.kolicina = dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
+            proizvod.Naziv = dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
+            proizvod.Cijena = dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
+            proizvod.Kolicina = dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
 
             AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(proizvod);
 
@@ -200,6 +199,30 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             }
         }
-    }
 
+        private void DodajProizvodUKosaricu(int proizvodIndex)
+        {
+            // Ako proizvodIndex nije u ispravnom rasponu, prekinite izvršenje
+            if (proizvodIndex < 1 || proizvodIndex > dgSkladiste.Rows.Count)
+            {
+                MessageBox.Show("Neispravan indeks proizvoda.");
+                return;
+            }
+
+            Proizvod odabraniProizvod = dgSkladiste.Rows[proizvodIndex - 1].DataBoundItem as Proizvod;
+
+            kosarica.Add(odabraniProizvod);
+
+            OsvjeziPrikazKosarice();
+        }
+
+        private void OsvjeziPrikazKosarice()
+        {
+            listBoxKosarica.Items.Clear();
+            foreach (Proizvod proizvod in kosarica)
+            {
+                listBoxKosarica.Items.Add($"{proizvod.Naziv} - Količina: {proizvod.Kolicina} - Cijena: {proizvod.Cijena}");
+            }
+        }
+    }
 }

@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabAdmin = new System.Windows.Forms.TabControl();
@@ -47,6 +53,8 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.stornoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Blagajna = new System.Windows.Forms.TabPage();
+            this.btnDodajUKosaricu = new System.Windows.Forms.Button();
+            this.listBoxKosarica = new System.Windows.Forms.ListBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -59,6 +67,8 @@
             this.btnSok2 = new System.Windows.Forms.Button();
             this.btnSok1 = new System.Windows.Forms.Button();
             this.btnČokolada = new System.Windows.Forms.Button();
+            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
+            this.stornoBlagajnaMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.Djelatnici = new System.Windows.Forms.TabPage();
             this.dgDjelatnici = new System.Windows.Forms.DataGridView();
             this.menuDjelatnici = new System.Windows.Forms.MenuStrip();
@@ -73,8 +83,6 @@
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip4 = new System.Windows.Forms.MenuStrip();
-            this.stornoBlagajnaMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAdmin.SuspendLayout();
             this.tabProfil.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -82,13 +90,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPromet)).BeginInit();
             this.menuStrip3.SuspendLayout();
             this.Blagajna.SuspendLayout();
+            this.menuStrip4.SuspendLayout();
             this.Djelatnici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).BeginInit();
             this.menuDjelatnici.SuspendLayout();
             this.Skladiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdmin
@@ -242,7 +250,23 @@
             // 
             // dgPromet
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPromet.Location = new System.Drawing.Point(3, 30);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -272,6 +296,8 @@
             // 
             // Blagajna
             // 
+            this.Blagajna.Controls.Add(this.btnDodajUKosaricu);
+            this.Blagajna.Controls.Add(this.listBoxKosarica);
             this.Blagajna.Controls.Add(this.button10);
             this.Blagajna.Controls.Add(this.button9);
             this.Blagajna.Controls.Add(this.button8);
@@ -293,6 +319,24 @@
             this.Blagajna.TabIndex = 1;
             this.Blagajna.Text = "Blagajna";
             this.Blagajna.UseVisualStyleBackColor = true;
+            // 
+            // btnDodajUKosaricu
+            // 
+            this.btnDodajUKosaricu.Location = new System.Drawing.Point(611, 254);
+            this.btnDodajUKosaricu.Name = "btnDodajUKosaricu";
+            this.btnDodajUKosaricu.Size = new System.Drawing.Size(57, 29);
+            this.btnDodajUKosaricu.TabIndex = 26;
+            this.btnDodajUKosaricu.Text = "button2";
+            this.btnDodajUKosaricu.UseVisualStyleBackColor = true;
+            // 
+            // listBoxKosarica
+            // 
+            this.listBoxKosarica.FormattingEnabled = true;
+            this.listBoxKosarica.ItemHeight = 16;
+            this.listBoxKosarica.Location = new System.Drawing.Point(522, 24);
+            this.listBoxKosarica.Name = "listBoxKosarica";
+            this.listBoxKosarica.Size = new System.Drawing.Size(260, 196);
+            this.listBoxKosarica.TabIndex = 25;
             // 
             // button10
             // 
@@ -474,6 +518,24 @@
             this.btnČokolada.Text = "Čokolada";
             this.btnČokolada.UseVisualStyleBackColor = false;
             // 
+            // menuStrip4
+            // 
+            this.menuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stornoBlagajnaMenuStrip});
+            this.menuStrip4.Location = new System.Drawing.Point(3, 2);
+            this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Size = new System.Drawing.Size(795, 28);
+            this.menuStrip4.TabIndex = 24;
+            this.menuStrip4.Text = "menuStrip4";
+            // 
+            // stornoBlagajnaMenuStrip
+            // 
+            this.stornoBlagajnaMenuStrip.Name = "stornoBlagajnaMenuStrip";
+            this.stornoBlagajnaMenuStrip.Size = new System.Drawing.Size(67, 24);
+            this.stornoBlagajnaMenuStrip.Text = "Storno";
+            this.stornoBlagajnaMenuStrip.Click += new System.EventHandler(this.stornoBlagajnaMenuStrip_Click);
+            // 
             // Djelatnici
             // 
             this.Djelatnici.Controls.Add(this.dgDjelatnici);
@@ -490,7 +552,23 @@
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -550,7 +628,23 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -613,24 +707,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip4
-            // 
-            this.menuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stornoBlagajnaMenuStrip});
-            this.menuStrip4.Location = new System.Drawing.Point(3, 2);
-            this.menuStrip4.Name = "menuStrip4";
-            this.menuStrip4.Size = new System.Drawing.Size(795, 28);
-            this.menuStrip4.TabIndex = 24;
-            this.menuStrip4.Text = "menuStrip4";
-            // 
-            // stornoBlagajnaMenuStrip
-            // 
-            this.stornoBlagajnaMenuStrip.Name = "stornoBlagajnaMenuStrip";
-            this.stornoBlagajnaMenuStrip.Size = new System.Drawing.Size(67, 24);
-            this.stornoBlagajnaMenuStrip.Text = "Storno";
-            this.stornoBlagajnaMenuStrip.Click += new System.EventHandler(this.stornoBlagajnaMenuStrip_Click);
-            // 
             // DjelatnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -658,6 +734,8 @@
             this.menuStrip3.PerformLayout();
             this.Blagajna.ResumeLayout(false);
             this.Blagajna.PerformLayout();
+            this.menuStrip4.ResumeLayout(false);
+            this.menuStrip4.PerformLayout();
             this.Djelatnici.ResumeLayout(false);
             this.Djelatnici.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDjelatnici)).EndInit();
@@ -668,8 +746,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgSkladiste)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip4.ResumeLayout(false);
-            this.menuStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -722,5 +798,7 @@
         private System.Windows.Forms.ToolStripMenuItem stornoToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip4;
         private System.Windows.Forms.ToolStripMenuItem stornoBlagajnaMenuStrip;
+        private System.Windows.Forms.ListBox listBoxKosarica;
+        private System.Windows.Forms.Button btnDodajUKosaricu;
     }
 }

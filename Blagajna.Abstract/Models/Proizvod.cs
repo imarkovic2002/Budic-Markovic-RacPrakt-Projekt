@@ -10,10 +10,10 @@ namespace Blagajna.Abstract.Models
    public class Proizvod
     {
         public int ID {  get; set; }
-        public string naziv {  get; set; }
-        public string kolicina {  get; set; }
+        public string Naziv {  get; set; }
+        public string Kolicina {  get; set; }
 
-        public string cijena {  get; set; }
+        public string Cijena {  get; set; }
 
     }
 }
