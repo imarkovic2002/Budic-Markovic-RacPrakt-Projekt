@@ -27,12 +27,12 @@ namespace Budić_Marković_RacPrakt_Projekt
             tabAdmin.TabPages[2].Visible = false;
             tabAdmin.TabPages[3].Visible = false;
 
-            btnHrana1.Click += (sender, e) => DodajProizvodUKosaricu(1);
-            btnMlijeko1l.Click += (sender, e) => DodajProizvodUKosaricu(2);
-            btnSlatkisi1.Click += (sender, e) => DodajProizvodUKosaricu(3);
-            btnSok1.Click += (sender, e) => DodajProizvodUKosaricu(4);
-            btnSok2.Click += (sender, e) => DodajProizvodUKosaricu(5);
-            btnČokolada.Click += (sender, e) => DodajProizvodUKosaricu(6);
+            btnProizvod5.Click += (sender, e) => DodajProizvodUKosaricu(1);
+            btnProizvod6.Click += (sender, e) => DodajProizvodUKosaricu(2);
+            btnProizvod4.Click += (sender, e) => DodajProizvodUKosaricu(3);
+            btnProizvod2.Click += (sender, e) => DodajProizvodUKosaricu(4);
+            btnProizvod3.Click += (sender, e) => DodajProizvodUKosaricu(5);
+            btnProizvod1.Click += (sender, e) => DodajProizvodUKosaricu(6);
 
                 
             OpenFormBasedOnRole(djelatnik);
@@ -104,7 +104,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             proizvod.ID = Convert.ToInt32(dgSkladiste.SelectedRows[0].Cells["Id"].Value);
             proizvod.Naziv = dgSkladiste.SelectedRows[0].Cells["Naziv"].Value.ToString();
-            proizvod.Cijena = dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString();
+            proizvod.Cijena= float.Parse(dgSkladiste.SelectedRows[0].Cells["Cijena"].Value.ToString());
             proizvod.Kolicina = dgSkladiste.SelectedRows[0].Cells["Kolicina"].Value.ToString();
 
             AddEditProizvodForm addEditProizvodForm = new AddEditProizvodForm(proizvod);
@@ -218,11 +218,55 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void OsvjeziPrikazKosarice()
         {
+            float sum = 0;
             listBoxKosarica.Items.Clear();
             foreach (Proizvod proizvod in kosarica)
             {
+                sum = sum + proizvod.Cijena;
                 listBoxKosarica.Items.Add($"{proizvod.Naziv} - Količina: {proizvod.Kolicina} - Cijena: {proizvod.Cijena}");
             }
+            lbCijena.Text=sum.ToString();
+        }
+
+        private void btnProizvod1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIspisiRacun_Click(object sender, EventArgs e)
+        {
+            float sum = 0;
+           
+            foreach   (Proizvod proizvod in kosarica)
+            {
+                sum = sum + proizvod.Cijena ;
+            }
+            if (Convert.ToInt32(textBoxDano.Text) != 0) 
+            {
+                float ostatak = float.Parse(textBoxDano.Text) - sum;
+                MessageBox.Show("Vrati ostatak od " + ostatak);
+                _transakcijaStore.dodajTransakciju(sum, djelatnikUse,"gotovina");
+            }
+            else
+            {
+                MessageBox.Show("Odabrali ste plaćanje karticom.");
+                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "kartica");
+            }
+        
+            
+            
+            listBoxKosarica.Items.Clear();
+            textBoxDano.Text = "0";
+            lbCijena.Text = "0";
+            dgPromet.DataSource = _transakcijaStore.getTransakcije();
+
+
+        }
+
+        private void današnjiPrometToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DnevniIzvjestajForm dnevniIzvjestajForm=new DnevniIzvjestajForm();
+            dnevniIzvjestajForm.Show();
         }
     }
 }

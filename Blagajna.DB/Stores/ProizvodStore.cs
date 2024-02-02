@@ -32,7 +32,7 @@ namespace Blagajna.DB.Stores
                                 proizvod.ID = reader.GetInt32("id");
                                 proizvod.Naziv = reader.GetString("naziv");
                                 proizvod.Kolicina = reader.GetString("kolicina");
-                                proizvod.Cijena = reader.GetString("cijena");
+                                proizvod.Cijena = reader.GetFloat("cijena");
 
                                 proizvodList.Add(proizvod);
                             }

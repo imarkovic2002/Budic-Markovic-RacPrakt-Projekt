@@ -32,7 +32,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
                 btnSave.Text = "Ažuriraj";
 
                 txtNaziv.Text = proizvod.Naziv;
-                txtCijena.Text = proizvod.Cijena;
+                txtCijena.Text = proizvod.Cijena.ToString();
                 txtKolicina.Text = proizvod.Kolicina;
                 Proizvod_Id = proizvod.ID;
             }
@@ -50,7 +50,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             Proizvod proizvod= new Proizvod();
 
             proizvod.Naziv = txtNaziv.Text;
-            proizvod.Cijena = txtCijena.Text;
+            proizvod.Cijena = float.Parse(txtCijena.Text);
             proizvod.Kolicina= txtKolicina.Text;
             proizvod.ID = Proizvod_Id;
 

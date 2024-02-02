@@ -1,4 +1,5 @@
 ﻿using Blagajna.Abstract.Models;
+using Budić_Marković_RacPrakt_Projekt;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
@@ -40,9 +41,36 @@ namespace Blagajna.DB.Stores
             }
             return tranksakcija;
         }
+        public void dodajTransakciju(float ukupni_iznos,Djelatnik djelatnik,string nacinPlacanja)
+        {
+            var connectionManager = new SqlConnectionFactory();
+
+            using (var con = connectionManager.GetNewConnection())
+            {
+                if (con != null)
+                {
+                    string upit = "INSERT INTO transakcija(datum_transakcije,ukupni_iznos," +
+                        "nacin_placanja,djelatnik_id)" +
+                        "VALUES(@datum_transakcije,@ukupni_iznos,@nacin_placanja,@djelatnik_id)";
+
+                    using (var command = new MySqlCommand(upit, con))
+                    {
+                        command.Parameters.AddWithValue("@datum_transakcije",DateTime.Now);
+                        command.Parameters.AddWithValue("@ukupni_iznos",ukupni_iznos );
+                        command.Parameters.AddWithValue("@nacin_placanja",nacinPlacanja );
+                        command.Parameters.AddWithValue("@djelatnik_id", djelatnik.ID);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    connectionManager.CloseConnection(con);
+                }
+            }
+        }
+    }
     }
         
-}
+
 
 
 
