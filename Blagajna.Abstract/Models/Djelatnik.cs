@@ -18,5 +18,22 @@ namespace Budić_Marković_RacPrakt_Projekt
         public string Role { get; set; }
         public DateTime DatumZaposlenja { get; set; }
         public string Lozinka {get;set;}
+
+        public Djelatnik Clone()
+        {
+            return new Djelatnik
+            {
+                ID = this.ID,
+                Ime = this.Ime,
+                Prezime = this.Prezime,
+                DatumRodjenja = this.DatumRodjenja,
+                OIB = this.OIB,
+                Email = this.Email,
+                BrojMobitela = this.BrojMobitela,
+                Role = this.Role,
+                DatumZaposlenja = this.DatumZaposlenja,
+                Lozinka = this.Lozinka
+            };
+        }
     }
 }

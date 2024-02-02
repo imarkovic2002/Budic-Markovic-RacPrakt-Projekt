@@ -167,17 +167,30 @@ namespace Budić_Marković_RacPrakt_Projekt
         }
         private void toolSChangeProfile_Click(object sender, EventArgs e)
         {
-            AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(djelatnikUse);
+            Djelatnik originalDjelatnik = new Djelatnik();
+            originalDjelatnik = djelatnikUse.Clone();
 
+            AddEditDjelatnik addEditDjelatnik = new AddEditDjelatnik(djelatnikUse);
             addEditDjelatnik.ShowDialog();
-            Djelatnik djelatnik = new Djelatnik();
-            djelatnik = _djelatnikStore.GetDjelatnik(djelatnikUse.ID);
-            lblDobrosao.Text = "Dobrodošao, " + djelatnikUse.Ime.ToString() + " " + djelatnik.Prezime.ToString();
-            lblDatumRodenja.Text = "Datum rođenja: " + djelatnik.DatumRodjenja.ToShortDateString();
-            lblEmail.Text = "Email: " + djelatnik.Email.ToString();
-            lblBroj.Text = "Broj mobitela: " + djelatnik.BrojMobitela.ToString();
-            lblRoleProfil.Text = "Role: " + djelatnik.Role.ToString();
+
+            Djelatnik updatedDjelatnik = _djelatnikStore.GetDjelatnik(djelatnikUse.ID);
+
+            if (originalDjelatnik.Role.ToLower() == "blagajnik" && updatedDjelatnik.Role.ToLower() != originalDjelatnik.Role.ToLower())
+            {
+                MessageBox.Show("Blagajnik ne može mijenjati sam sebi role.", "Role Change Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                djelatnikUse.Role = originalDjelatnik.Role;
+            }
+            else
+            {
+                djelatnikUse = updatedDjelatnik;
+                lblDobrosao.Text = "Dobrodošao, " + djelatnikUse.Ime.ToString() + " " + djelatnikUse.Prezime.ToString();
+                lblDatumRodenja.Text = "Datum rođenja: " + djelatnikUse.DatumRodjenja.ToShortDateString();
+                lblEmail.Text = "Email: " + djelatnikUse.Email.ToString();
+                lblBroj.Text = "Broj mobitela: " + djelatnikUse.BrojMobitela.ToString();
+                lblRoleProfil.Text = "Role: " + djelatnikUse.Role.ToString();
+            }
         }
+
         private void stornoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(this, "Dali ste sigurni?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
