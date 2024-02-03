@@ -75,7 +75,10 @@ namespace Budić_Marković_RacPrakt_Projekt
             {
                 tabDjelatnici.TabPages.Add(Profil);
                 tabDjelatnici.TabPages.Add(Blagajna);
-
+                tabDjelatnici.TabPages.Add(Skladiste);
+                toolsNoviProizvod.Visible = false;
+                toolsAzuriraj.Visible=false;
+                toolSObrisiProizvod.Visible=false;
             }
         }
         private void lblBack_Click(object sender, EventArgs e)
