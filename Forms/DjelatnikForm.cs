@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+
 
 
 namespace Budić_Marković_RacPrakt_Projekt
@@ -259,7 +261,8 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void btnProizvod1_Click(object sender, EventArgs e)
         {
-
+            var slika = kosarica.Where(x => x.ID == 100);
+            btnProizvod1.Image = (Image)slika.Select(x => x.Image );
         }
 
         private void btnIspisiRacun_Click(object sender, EventArgs e)
@@ -314,11 +317,32 @@ namespace Budić_Marković_RacPrakt_Projekt
                 kosarica.RemoveAt(listBoxKosarica.SelectedIndex);
 
               
-                OsvjeziPrikazKosarice();
-
-              
-               
+                OsvjeziPrikazKosarice();  
             }
         }
+        
+        private void SetButtonImages()
+        {
+            var buttons = kosarica.ToList().AsEnumerable().Select(x => x);
+
+            foreach (var button in buttons)
+            {
+                var image = _proizvodStore.LoadImageFromDatabase(button.ID);
+
+
+                if (image != null)
+                {
+                    button.Image = image;
+                }
+                else
+                {
+                    button.Image = null;
+                }
+            }
+
+
+        }
+        
+        
     }
 }

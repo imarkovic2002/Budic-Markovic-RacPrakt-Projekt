@@ -153,7 +153,7 @@ namespace Blagajna.DB.Stores
             }
         }
 
-        private Image LoadImageFromDatabase(int proizvod_id)
+        public Image LoadImageFromDatabase(int proizvod_id)
         {
             var connectionManager = new SqlConnectionFactory();
             using (var connection = connectionManager.GetNewConnection())
@@ -166,13 +166,27 @@ namespace Blagajna.DB.Stores
                     {
                         command.Parameters.AddWithValue("@Id", proizvod_id);
 
-                        command.ExecuteNonQuery();
+                        // You should use ExecuteScalar to retrieve a single value (in this case, the image)
+                        var imageData = command.ExecuteScalar() as byte[];
+
+                        if (imageData != null)
+                        {
+                            // Convert the byte array to an Image
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                return Image.FromStream(ms);
+                            }
+                        }
                     }
 
                     connectionManager.CloseConnection(connection);
                 }
+
                 return null;
             }
         }
+
+
+
     }
 }
