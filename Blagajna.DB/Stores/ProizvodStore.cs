@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blagajna.Abstract.Models;
+using System.IO;
+using System.Drawing;
 
 
 namespace Blagajna.DB.Stores
@@ -15,7 +17,7 @@ namespace Blagajna.DB.Stores
         {
             var connectionManager = new SqlConnectionFactory();
             List<Proizvod> proizvodList = new List<Proizvod>();
-            
+
 
             using (var connection = connectionManager.GetNewConnection())
             {
@@ -25,7 +27,8 @@ namespace Blagajna.DB.Stores
 
                     using (var command = new MySqlCommand(query, connection))
                     {
-                        using (var reader = command.ExecuteReader()) {
+                        using (var reader = command.ExecuteReader())
+                        {
                             while (reader.Read())
                             {
                                 Proizvod proizvod = new Proizvod();
@@ -41,12 +44,12 @@ namespace Blagajna.DB.Stores
                 }
                 connectionManager.CloseConnection(connection);
             }
-            return proizvodList.ToList(); 
+            return proizvodList.ToList();
         }
         public Proizvod getProizvod(int proizvod_id)
         {
             var connectionManager = new SqlConnectionFactory();
-             Proizvod proizvod = new Proizvod();
+            Proizvod proizvod = new Proizvod();
 
 
             using (var connection = connectionManager.GetNewConnection())
@@ -60,16 +63,16 @@ namespace Blagajna.DB.Stores
                         command.Parameters.AddWithValue("@Id", proizvod_id);
                         using (var reader = command.ExecuteReader())
                         {
-                            
+
                             while (reader.Read())
                             {
-                               
+
                                 proizvod.ID = reader.GetInt32("id");
                                 proizvod.Naziv = reader.GetString("naziv");
                                 proizvod.Kolicina = reader.GetString("kolicina");
                                 proizvod.Cijena = reader.GetFloat("cijena");
 
-                             
+
                             }
                         }
                     }
@@ -79,11 +82,11 @@ namespace Blagajna.DB.Stores
             return proizvod;
         }
 
-        public void DodajProizvod (Proizvod proizvod)
+        public void DodajProizvod(Proizvod proizvod)
         {
             var connectionManager = new SqlConnectionFactory();
 
-            using (var  con = connectionManager.GetNewConnection())
+            using (var con = connectionManager.GetNewConnection())
             {
                 if (con != null)
                 {
@@ -104,7 +107,7 @@ namespace Blagajna.DB.Stores
             }
         }
 
-        public void ObrisiProizvod (int proizvod_id)
+        public void ObrisiProizvod(int proizvod_id)
         {
             var connectionManager = new SqlConnectionFactory();
 
@@ -117,7 +120,7 @@ namespace Blagajna.DB.Stores
                     using (var command = new MySqlCommand(upit, conn))
                     {
                         command.Parameters.AddWithValue("@Id", proizvod_id);
-                        command.ExecuteNonQuery ();
+                        command.ExecuteNonQuery();
                     }
 
                     connectionManager.CloseConnection(conn);
@@ -147,6 +150,28 @@ namespace Blagajna.DB.Stores
 
                     connectionManager.CloseConnection(connection);
                 }
+            }
+        }
+
+        private Image LoadImageFromDatabase(int proizvod_id)
+        {
+            var connectionManager = new SqlConnectionFactory();
+            using (var connection = connectionManager.GetNewConnection())
+            {
+                if (connection != null)
+                {
+                    string upit = "SELECT slika FROM proizvod WHERE id = @Id";
+
+                    using (var command = new MySqlCommand(upit, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", proizvod_id);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    connectionManager.CloseConnection(connection);
+                }
+                return null;
             }
         }
     }

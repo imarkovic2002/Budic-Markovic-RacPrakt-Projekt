@@ -64,6 +64,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.Lime;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.Location = new System.Drawing.Point(13, 385);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
@@ -71,7 +72,7 @@
             this.btnSave.Size = new System.Drawing.Size(116, 52);
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Potvrdi";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtOib
@@ -85,11 +86,11 @@
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPrezime.Location = new System.Drawing.Point(193, 54);
             this.txtPrezime.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(197, 26);
+            this.txtPrezime.Size = new System.Drawing.Size(197, 27);
             this.txtPrezime.TabIndex = 20;
             // 
             // txtIme
@@ -145,11 +146,11 @@
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtBoxEmail.Location = new System.Drawing.Point(193, 142);
             this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(197, 26);
+            this.txtBoxEmail.Size = new System.Drawing.Size(197, 27);
             this.txtBoxEmail.TabIndex = 26;
             // 
             // lbBroj_mobitela
@@ -176,12 +177,12 @@
             // 
             // txtBoxLozinka
             // 
-            this.txtBoxLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtBoxLozinka.Location = new System.Drawing.Point(193, 187);
             this.txtBoxLozinka.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxLozinka.Name = "txtBoxLozinka";
             this.txtBoxLozinka.PasswordChar = '*';
-            this.txtBoxLozinka.Size = new System.Drawing.Size(197, 26);
+            this.txtBoxLozinka.Size = new System.Drawing.Size(197, 27);
             this.txtBoxLozinka.TabIndex = 30;
             // 
             // lbRole
@@ -248,7 +249,7 @@
             // 
             // cmbRole
             // 
-            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Location = new System.Drawing.Point(193, 269);
             this.cmbRole.Name = "cmbRole";

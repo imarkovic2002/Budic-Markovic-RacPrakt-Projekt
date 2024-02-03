@@ -2,8 +2,11 @@
 using Blagajna.DB;
 using Blagajna.DB.Stores;
 using Budić_Marković_RacPrakt_Projekt.Forms;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 

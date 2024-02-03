@@ -26,5 +26,10 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
         {
 
         }
+
+        private void btnIzlaz_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

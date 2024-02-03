@@ -82,24 +82,25 @@
             // 
             // txtCijena
             // 
-            this.txtCijena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtCijena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtCijena.Location = new System.Drawing.Point(135, 92);
             this.txtCijena.Margin = new System.Windows.Forms.Padding(4);
             this.txtCijena.Name = "txtCijena";
-            this.txtCijena.Size = new System.Drawing.Size(197, 26);
+            this.txtCijena.Size = new System.Drawing.Size(197, 27);
             this.txtCijena.TabIndex = 4;
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtKolicina.Location = new System.Drawing.Point(135, 137);
             this.txtKolicina.Margin = new System.Windows.Forms.Padding(4);
             this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(197, 26);
+            this.txtKolicina.Size = new System.Drawing.Size(197, 27);
             this.txtKolicina.TabIndex = 5;
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.Lime;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSave.Location = new System.Drawing.Point(16, 223);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
@@ -107,7 +108,7 @@
             this.btnSave.Size = new System.Drawing.Size(116, 52);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Potvrdi";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button2

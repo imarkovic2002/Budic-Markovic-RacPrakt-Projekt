@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabDjelatnici = new System.Windows.Forms.TabControl();
@@ -194,7 +200,7 @@
             // 
             this.lblRoleProfil.AutoSize = true;
             this.lblRoleProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblRoleProfil.Location = new System.Drawing.Point(11, 215);
+            this.lblRoleProfil.Location = new System.Drawing.Point(11, 221);
             this.lblRoleProfil.Name = "lblRoleProfil";
             this.lblRoleProfil.Size = new System.Drawing.Size(48, 20);
             this.lblRoleProfil.TabIndex = 2;
@@ -224,8 +230,10 @@
             // 
             // toolSChangeProfile
             // 
+            this.toolSChangeProfile.BackColor = System.Drawing.Color.DimGray;
+            this.toolSChangeProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolSChangeProfile.Name = "toolSChangeProfile";
-            this.toolSChangeProfile.Size = new System.Drawing.Size(115, 24);
+            this.toolSChangeProfile.Size = new System.Drawing.Size(116, 24);
             this.toolSChangeProfile.Text = "Izmjeni profil ";
             this.toolSChangeProfile.Click += new System.EventHandler(this.toolSChangeProfile_Click);
             // 
@@ -244,7 +252,23 @@
             // 
             // dgPromet
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPromet.Location = new System.Drawing.Point(3, 30);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -310,18 +334,19 @@
             // 
             // btnUkloni
             // 
-            this.btnUkloni.Location = new System.Drawing.Point(522, 278);
+            this.btnUkloni.BackColor = System.Drawing.Color.Gray;
+            this.btnUkloni.Location = new System.Drawing.Point(522, 265);
             this.btnUkloni.Name = "btnUkloni";
-            this.btnUkloni.Size = new System.Drawing.Size(117, 23);
+            this.btnUkloni.Size = new System.Drawing.Size(117, 36);
             this.btnUkloni.TabIndex = 30;
             this.btnUkloni.Text = "Ukloni";
-            this.btnUkloni.UseVisualStyleBackColor = true;
+            this.btnUkloni.UseVisualStyleBackColor = false;
             this.btnUkloni.Click += new System.EventHandler(this.btnUkloni_Click);
             // 
             // lbCijena
             // 
             this.lbCijena.AutoSize = true;
-            this.lbCijena.Location = new System.Drawing.Point(532, 229);
+            this.lbCijena.Location = new System.Drawing.Point(519, 212);
             this.lbCijena.Name = "lbCijena";
             this.lbCijena.Size = new System.Drawing.Size(14, 16);
             this.lbCijena.TabIndex = 29;
@@ -329,17 +354,18 @@
             // 
             // btnIspisiRacun
             // 
-            this.btnIspisiRacun.Location = new System.Drawing.Point(658, 278);
+            this.btnIspisiRacun.BackColor = System.Drawing.Color.OldLace;
+            this.btnIspisiRacun.Location = new System.Drawing.Point(656, 265);
             this.btnIspisiRacun.Name = "btnIspisiRacun";
-            this.btnIspisiRacun.Size = new System.Drawing.Size(124, 23);
+            this.btnIspisiRacun.Size = new System.Drawing.Size(126, 36);
             this.btnIspisiRacun.TabIndex = 28;
             this.btnIspisiRacun.Text = "Ispiši Racun";
-            this.btnIspisiRacun.UseVisualStyleBackColor = true;
+            this.btnIspisiRacun.UseVisualStyleBackColor = false;
             this.btnIspisiRacun.Click += new System.EventHandler(this.btnIspisiRacun_Click);
             // 
             // textBoxDano
             // 
-            this.textBoxDano.Location = new System.Drawing.Point(522, 248);
+            this.textBoxDano.Location = new System.Drawing.Point(522, 237);
             this.textBoxDano.Name = "textBoxDano";
             this.textBoxDano.Size = new System.Drawing.Size(260, 22);
             this.textBoxDano.TabIndex = 27;
@@ -351,7 +377,7 @@
             this.listBoxKosarica.ItemHeight = 16;
             this.listBoxKosarica.Location = new System.Drawing.Point(522, 24);
             this.listBoxKosarica.Name = "listBoxKosarica";
-            this.listBoxKosarica.Size = new System.Drawing.Size(260, 196);
+            this.listBoxKosarica.Size = new System.Drawing.Size(260, 180);
             this.listBoxKosarica.TabIndex = 25;
             // 
             // btnProizvod12
@@ -551,7 +577,23 @@
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -611,7 +653,23 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
