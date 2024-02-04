@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabDjelatnici = new System.Windows.Forms.TabControl();
@@ -83,7 +77,6 @@
             this.toolsNoviProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsAzuriraj = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabDjelatnici.SuspendLayout();
             this.Profil.SuspendLayout();
@@ -130,7 +123,7 @@
             this.tabDjelatnici.Controls.Add(this.Djelatnici);
             this.tabDjelatnici.Controls.Add(this.Skladiste);
             this.tabDjelatnici.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabDjelatnici.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabDjelatnici.Font = new System.Drawing.Font("Perpetua Titling MT", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabDjelatnici.Location = new System.Drawing.Point(0, 0);
             this.tabDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDjelatnici.Name = "tabDjelatnici";
@@ -141,6 +134,7 @@
             // 
             // Profil
             // 
+            this.Profil.BackColor = System.Drawing.Color.Linen;
             this.Profil.Controls.Add(this.lblDatumRodenja);
             this.Profil.Controls.Add(this.lblEmail);
             this.Profil.Controls.Add(this.lblOsobniPoddaci);
@@ -154,7 +148,6 @@
             this.Profil.Size = new System.Drawing.Size(801, 304);
             this.Profil.TabIndex = 4;
             this.Profil.Text = "Moj profil";
-            this.Profil.UseVisualStyleBackColor = true;
             // 
             // lblDatumRodenja
             // 
@@ -230,7 +223,7 @@
             // 
             // toolSChangeProfile
             // 
-            this.toolSChangeProfile.BackColor = System.Drawing.Color.DimGray;
+            this.toolSChangeProfile.BackColor = System.Drawing.Color.Silver;
             this.toolSChangeProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.toolSChangeProfile.Name = "toolSChangeProfile";
             this.toolSChangeProfile.Size = new System.Drawing.Size(116, 24);
@@ -252,23 +245,7 @@
             // 
             // dgPromet
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgPromet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgPromet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgPromet.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgPromet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPromet.Location = new System.Drawing.Point(3, 30);
             this.dgPromet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -292,6 +269,7 @@
             // 
             // stornoToolStripMenuItem
             // 
+            this.stornoToolStripMenuItem.BackColor = System.Drawing.Color.LightSalmon;
             this.stornoToolStripMenuItem.Name = "stornoToolStripMenuItem";
             this.stornoToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.stornoToolStripMenuItem.Text = "Storno";
@@ -299,6 +277,7 @@
             // 
             // današnjiPrometToolStripMenuItem
             // 
+            this.današnjiPrometToolStripMenuItem.BackColor = System.Drawing.Color.LightYellow;
             this.današnjiPrometToolStripMenuItem.Name = "današnjiPrometToolStripMenuItem";
             this.današnjiPrometToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
             this.današnjiPrometToolStripMenuItem.Text = "Današnji Promet";
@@ -348,7 +327,7 @@
             this.lbCijena.AutoSize = true;
             this.lbCijena.Location = new System.Drawing.Point(519, 212);
             this.lbCijena.Name = "lbCijena";
-            this.lbCijena.Size = new System.Drawing.Size(14, 16);
+            this.lbCijena.Size = new System.Drawing.Size(16, 16);
             this.lbCijena.TabIndex = 29;
             this.lbCijena.Text = "0";
             // 
@@ -367,7 +346,7 @@
             // 
             this.textBoxDano.Location = new System.Drawing.Point(522, 237);
             this.textBoxDano.Name = "textBoxDano";
-            this.textBoxDano.Size = new System.Drawing.Size(260, 22);
+            this.textBoxDano.Size = new System.Drawing.Size(260, 23);
             this.textBoxDano.TabIndex = 27;
             this.textBoxDano.Text = "0";
             // 
@@ -568,23 +547,7 @@
             // dgDjelatnici
             // 
             this.dgDjelatnici.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgDjelatnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgDjelatnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgDjelatnici.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgDjelatnici.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgDjelatnici.Location = new System.Drawing.Point(3, 30);
             this.dgDjelatnici.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -596,6 +559,7 @@
             // 
             // menuDjelatnici
             // 
+            this.menuDjelatnici.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.menuDjelatnici.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuDjelatnici.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolSDodaj,
@@ -609,22 +573,25 @@
             // 
             // toolSDodaj
             // 
+            this.toolSDodaj.BackColor = System.Drawing.Color.LightGreen;
             this.toolSDodaj.Name = "toolSDodaj";
-            this.toolSDodaj.Size = new System.Drawing.Size(64, 24);
+            this.toolSDodaj.Size = new System.Drawing.Size(67, 24);
             this.toolSDodaj.Text = "Dodaj";
             this.toolSDodaj.Click += new System.EventHandler(this.toolSDodaj_Click);
             // 
             // toolAzuriraj
             // 
+            this.toolAzuriraj.BackColor = System.Drawing.Color.Gainsboro;
             this.toolAzuriraj.Name = "toolAzuriraj";
-            this.toolAzuriraj.Size = new System.Drawing.Size(74, 24);
+            this.toolAzuriraj.Size = new System.Drawing.Size(82, 24);
             this.toolAzuriraj.Text = "Ažuriraj";
             this.toolAzuriraj.Click += new System.EventHandler(this.toolAzuriraj_Click);
             // 
             // toolsSObrisi
             // 
+            this.toolsSObrisi.BackColor = System.Drawing.Color.Coral;
             this.toolsSObrisi.Name = "toolsSObrisi";
-            this.toolsSObrisi.Size = new System.Drawing.Size(62, 24);
+            this.toolsSObrisi.Size = new System.Drawing.Size(66, 24);
             this.toolsSObrisi.Text = "Obriši";
             this.toolsSObrisi.Click += new System.EventHandler(this.toolsSObrisi_Click);
             // 
@@ -644,23 +611,7 @@
             // dgSkladiste
             // 
             this.dgSkladiste.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgSkladiste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgSkladiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgSkladiste.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgSkladiste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSkladiste.Location = new System.Drawing.Point(3, 30);
             this.dgSkladiste.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -672,6 +623,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsNoviProizvod,
@@ -685,30 +637,27 @@
             // 
             // toolsNoviProizvod
             // 
+            this.toolsNoviProizvod.BackColor = System.Drawing.Color.LightGreen;
             this.toolsNoviProizvod.Name = "toolsNoviProizvod";
-            this.toolsNoviProizvod.Size = new System.Drawing.Size(64, 24);
+            this.toolsNoviProizvod.Size = new System.Drawing.Size(67, 24);
             this.toolsNoviProizvod.Text = "Dodaj";
             this.toolsNoviProizvod.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolsAzuriraj
             // 
+            this.toolsAzuriraj.BackColor = System.Drawing.Color.Gainsboro;
             this.toolsAzuriraj.Name = "toolsAzuriraj";
-            this.toolsAzuriraj.Size = new System.Drawing.Size(78, 24);
+            this.toolsAzuriraj.Size = new System.Drawing.Size(86, 24);
             this.toolsAzuriraj.Text = "Ažuriraj ";
             this.toolsAzuriraj.Click += new System.EventHandler(this.toolsAzuriraj_Click);
             // 
             // toolSObrisiProizvod
             // 
+            this.toolSObrisiProizvod.BackColor = System.Drawing.Color.Coral;
             this.toolSObrisiProizvod.Name = "toolSObrisiProizvod";
-            this.toolSObrisiProizvod.Size = new System.Drawing.Size(62, 24);
+            this.toolSObrisiProizvod.Size = new System.Drawing.Size(66, 24);
             this.toolSObrisiProizvod.Text = "Obriši";
             this.toolSObrisiProizvod.Click += new System.EventHandler(this.toolSObrisiProizvod_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // contextMenuStrip2
             // 
@@ -792,7 +741,6 @@
         private System.Windows.Forms.Label lblDobrosao;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolSChangeProfile;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblRoleProfil;
         private System.Windows.Forms.Label lblDatumRodenja;
         private System.Windows.Forms.Label lblEmail;
