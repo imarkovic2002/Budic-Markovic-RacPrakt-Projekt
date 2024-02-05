@@ -261,8 +261,10 @@ namespace Budić_Marković_RacPrakt_Projekt
 
         private void btnProizvod1_Click(object sender, EventArgs e)
         {
+            /*
             var slika = kosarica.Where(x => x.ID == 100);
             btnProizvod1.Image = (Image)slika.Select(x => x.Image );
+            */
         }
 
         private void btnIspisiRacun_Click(object sender, EventArgs e)
