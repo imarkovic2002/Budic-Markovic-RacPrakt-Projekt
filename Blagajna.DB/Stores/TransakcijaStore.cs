@@ -15,7 +15,7 @@ namespace Blagajna.DB.Stores
             List<Transakcija> tranksakcija = new List<Transakcija>();
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
-                string query = "SELECT * FROM transakcija";
+                string query = "SELECT id,datum_transakcije,ukupni_iznos,nacin_placanja FROM transakcija";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
 

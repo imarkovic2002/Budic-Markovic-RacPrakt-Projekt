@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
+
 
 
 
@@ -345,7 +345,10 @@ namespace Budić_Marković_RacPrakt_Projekt
 
 
         }
-        
-        
+
+        private void DjelatnikForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

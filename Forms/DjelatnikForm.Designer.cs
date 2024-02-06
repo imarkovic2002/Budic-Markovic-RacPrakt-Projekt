@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DjelatnikForm));
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabDjelatnici = new System.Windows.Forms.TabControl();
@@ -359,6 +360,7 @@
             // btnProizvod12
             // 
             this.btnProizvod12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod12.BackgroundImage")));
             this.btnProizvod12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -373,6 +375,7 @@
             // btnProizvod11
             // 
             this.btnProizvod11.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod11.BackgroundImage")));
             this.btnProizvod11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -387,6 +390,7 @@
             // btnProizvod10
             // 
             this.btnProizvod10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod10.BackgroundImage")));
             this.btnProizvod10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -401,6 +405,7 @@
             // btnProizvod9
             // 
             this.btnProizvod9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod9.BackgroundImage")));
             this.btnProizvod9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -415,6 +420,7 @@
             // btnProizvod8
             // 
             this.btnProizvod8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod8.BackgroundImage")));
             this.btnProizvod8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -429,6 +435,7 @@
             // btnProizvod7
             // 
             this.btnProizvod7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod7.BackgroundImage")));
             this.btnProizvod7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -443,6 +450,7 @@
             // btnProizvod6
             // 
             this.btnProizvod6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod6.BackgroundImage")));
             this.btnProizvod6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -457,6 +465,7 @@
             // btnProizvod5
             // 
             this.btnProizvod5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod5.BackgroundImage")));
             this.btnProizvod5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -471,6 +480,7 @@
             // btnProizvod4
             // 
             this.btnProizvod4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod4.BackgroundImage")));
             this.btnProizvod4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -485,10 +495,11 @@
             // btnProizvod3
             // 
             this.btnProizvod3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod3.BackgroundImage")));
             this.btnProizvod3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnProizvod3.Location = new System.Drawing.Point(225, 23);
+            this.btnProizvod3.Location = new System.Drawing.Point(224, 23);
             this.btnProizvod3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProizvod3.Name = "btnProizvod3";
             this.btnProizvod3.Size = new System.Drawing.Size(96, 71);
@@ -499,6 +510,7 @@
             // btnProizvod2
             // 
             this.btnProizvod2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod2.BackgroundImage")));
             this.btnProizvod2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -513,6 +525,7 @@
             // btnProizvod1
             // 
             this.btnProizvod1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnProizvod1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProizvod1.BackgroundImage")));
             this.btnProizvod1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProizvod1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProizvod1.ForeColor = System.Drawing.Color.Black;
@@ -666,6 +679,7 @@
             this.Name = "DjelatnikForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.DjelatnikForm_Load);
             this.tabDjelatnici.ResumeLayout(false);
             this.Profil.ResumeLayout(false);
             this.Profil.PerformLayout();

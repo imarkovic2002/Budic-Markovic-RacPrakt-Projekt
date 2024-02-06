@@ -3,6 +3,7 @@ using Blagajna.DB.Stores;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Budić_Marković_RacPrakt_Projekt.Forms
 {
@@ -11,6 +12,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
         private int Proizvod_Id = 0;
         private ProizvodStore _proizvodStore;
         private KategorijaStore _kategorijaStore;
+        List<Kategorija> kategorije;
         public AddEditProizvodForm(Proizvod proizvod)
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
             if (_kategorijaStore == null)
                 _kategorijaStore = new KategorijaStore();
 
-            List<Kategorija> kategorije = _kategorijaStore.GetKategorije();
+           kategorije = _kategorijaStore.GetKategorije();
             foreach (Kategorija kategorija in kategorije)
             {
                 comboBox1.Items.Add(kategorija.Naziv);
@@ -58,7 +60,10 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
 
             if (Proizvod_Id != 0)
             {
-                int selectedKategorijaID = comboBox1.SelectedIndex + 1;
+                string selectedNaziv = comboBox1.SelectedItem.ToString();
+                int selectedKategorijaID = (from k in kategorije
+                                            where k.Naziv == selectedNaziv
+                                            select k.Id).FirstOrDefault();
                 _proizvodStore.AzurirajProizvod(proizvod,selectedKategorijaID);
             }
             else
