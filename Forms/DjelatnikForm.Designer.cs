@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblAdmin = new System.Windows.Forms.Label();
             this.lblExit = new System.Windows.Forms.Button();
             this.tabDjelatnici = new System.Windows.Forms.TabControl();
@@ -76,7 +75,6 @@
             this.toolsNoviProizvod = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsAzuriraj = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSObrisiProizvod = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabDjelatnici.SuspendLayout();
             this.Profil.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -655,12 +653,6 @@
             this.toolSObrisiProizvod.Text = "Obriši";
             this.toolSObrisiProizvod.Click += new System.EventHandler(this.toolSObrisiProizvod_Click);
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
             // DjelatnikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -750,6 +742,5 @@
         private System.Windows.Forms.ToolStripMenuItem današnjiPrometToolStripMenuItem;
         private System.Windows.Forms.Label lbCijena;
         private System.Windows.Forms.Button btnUkloni;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
