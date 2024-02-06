@@ -1,7 +1,6 @@
 ﻿using Blagajna.DB;
 using MySqlConnector;
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Budić_Marković_RacPrakt_Projekt
@@ -70,13 +69,6 @@ namespace Budić_Marković_RacPrakt_Projekt
             
 
             
-        }
-        
-       
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }        
 }

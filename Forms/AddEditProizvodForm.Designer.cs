@@ -36,6 +36,8 @@
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.lblVrstaProizvoda = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblName
@@ -102,7 +104,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.Lime;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSave.Location = new System.Drawing.Point(16, 223);
+            this.btnSave.Location = new System.Drawing.Point(13, 248);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 52);
@@ -114,7 +116,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(325, 223);
+            this.button2.Location = new System.Drawing.Point(356, 248);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 52);
@@ -123,11 +125,33 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lblVrstaProizvoda
+            // 
+            this.lblVrstaProizvoda.AutoSize = true;
+            this.lblVrstaProizvoda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblVrstaProizvoda.Location = new System.Drawing.Point(16, 189);
+            this.lblVrstaProizvoda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVrstaProizvoda.Name = "lblVrstaProizvoda";
+            this.lblVrstaProizvoda.Size = new System.Drawing.Size(60, 20);
+            this.lblVrstaProizvoda.TabIndex = 8;
+            this.lblVrstaProizvoda.Text = "Vrsta:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(135, 181);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(197, 28);
+            this.comboBox1.TabIndex = 10;
+            // 
             // AddEditProizvodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 289);
+            this.ClientSize = new System.Drawing.Size(485, 313);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblVrstaProizvoda);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtKolicina);
@@ -155,5 +179,7 @@
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblVrstaProizvoda;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

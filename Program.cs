@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Budić_Marković_RacPrakt_Projekt
@@ -16,6 +13,7 @@ namespace Budić_Marković_RacPrakt_Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            /*
             using (Main main=new Main())
             {
                 if(main.ShowDialog() == DialogResult.OK)
@@ -27,7 +25,16 @@ namespace Budić_Marković_RacPrakt_Projekt
                     }
                 }
             }
-            
+            */
+
+            // Novo
+            using (LoginForm loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new DjelatnikForm(loginForm.djelatnik));
+                }
+            }
         }
     }
 }

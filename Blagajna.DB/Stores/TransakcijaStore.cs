@@ -3,17 +3,14 @@ using Budić_Marković_RacPrakt_Projekt;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Blagajna.DB.Stores
 {
     public  class TransakcijaStore
     {
-        private SqlConnectionFactory connectionFactory=new SqlConnectionFactory();
-        public List<Transakcija> getTransakcije()
+        private readonly SqlConnectionFactory connectionFactory=new SqlConnectionFactory();
+        public List<Transakcija> GetTransakcije()
         {
             List<Transakcija> tranksakcija = new List<Transakcija>();
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
@@ -28,11 +25,13 @@ namespace Blagajna.DB.Stores
 
                         while (reader.Read())
                         {
-                            Transakcija trank = new Transakcija();
-                            trank.id=reader.GetInt32("id");
-                            trank.Datum_transakcije = reader.GetDateTime("datum_transakcije");
-                            trank.Ukupni_iznos = reader.GetFloat("ukupni_iznos");
-                            trank.nacin_placanja = reader.GetString("nacin_placanja");
+                            Transakcija trank = new Transakcija
+                            {
+                                Id = reader.GetInt32("id"),
+                                DatumTransakcije = reader.GetDateTime("datum_transakcije"),
+                                UkupniIznos = reader.GetFloat("ukupni_iznos"),
+                                NacinPlacanja = reader.GetString("nacin_placanja")
+                            };
 
                             tranksakcija.Add(trank);
                         }
@@ -41,7 +40,7 @@ namespace Blagajna.DB.Stores
             }
             return tranksakcija;
         }
-        public void dodajTransakciju(float ukupni_iznos,Djelatnik djelatnik,string nacinPlacanja)
+        public void DodajTransakciju(float ukupni_iznos,Djelatnik djelatnik,string nacinPlacanja)
         {
             var connectionManager = new SqlConnectionFactory();
 

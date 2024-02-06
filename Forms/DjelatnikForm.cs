@@ -2,13 +2,11 @@
 using Blagajna.DB;
 using Blagajna.DB.Stores;
 using Budić_Marković_RacPrakt_Projekt.Forms;
-using MySqlConnector;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 
 
@@ -16,11 +14,11 @@ namespace Budić_Marković_RacPrakt_Projekt
 {
     public partial class DjelatnikForm : Form
     {
-        private SqlConnectionFactory connectionFactory;
-        private ProizvodStore _proizvodStore;
+        private readonly SqlConnectionFactory connectionFactory;
+        private readonly ProizvodStore _proizvodStore;
         private DjelatnikStore _djelatnikStore;
-        private TransakcijaStore _transakcijaStore;
-        private StornoStore _stornoStore;
+        private readonly TransakcijaStore _transakcijaStore;
+        private readonly StornoStore _stornoStore;
         private Djelatnik djelatnikUse;
         private List<Proizvod> kosarica = new List<Proizvod>();
         public DjelatnikForm(Djelatnik djelatnik)
@@ -40,6 +38,12 @@ namespace Budić_Marković_RacPrakt_Projekt
             btnProizvod4.Click += (sender, e) => DodajProizvodUKosaricu(4);
             btnProizvod5.Click += (sender, e) => DodajProizvodUKosaricu(5);
             btnProizvod6.Click += (sender, e) => DodajProizvodUKosaricu(6);
+            btnProizvod7.Click += (sender, e) => DodajProizvodUKosaricu(7);
+            btnProizvod8.Click += (sender, e) => DodajProizvodUKosaricu(8);
+            btnProizvod9.Click += (sender, e) => DodajProizvodUKosaricu(9);
+            btnProizvod10.Click += (sender, e) => DodajProizvodUKosaricu(10);
+            btnProizvod11.Click += (sender, e) => DodajProizvodUKosaricu(11);
+            btnProizvod12.Click += (sender, e) => DodajProizvodUKosaricu(12);
 
 
 
@@ -52,7 +56,7 @@ namespace Budić_Marković_RacPrakt_Projekt
                 _transakcijaStore = new TransakcijaStore();
             if (_stornoStore == null)
                 _stornoStore = new StornoStore();
-            dgPromet.DataSource = _transakcijaStore.getTransakcije();
+            dgPromet.DataSource = _transakcijaStore.GetTransakcije();
             dgDjelatnici.DataSource = _djelatnikStore.getDjelatnici();
             var proizvodi = _proizvodStore.getProizvods();
             dgSkladiste.DataSource = proizvodi;
@@ -260,11 +264,8 @@ namespace Budić_Marković_RacPrakt_Projekt
         }
 
         private void btnProizvod1_Click(object sender, EventArgs e)
-        {
-            /*
-            var slika = kosarica.Where(x => x.ID == 100);
-            btnProizvod1.Image = (Image)slika.Select(x => x.Image );
-            */
+        { 
+
         }
 
         private void btnIspisiRacun_Click(object sender, EventArgs e)
@@ -279,12 +280,12 @@ namespace Budić_Marković_RacPrakt_Projekt
             {
                 float ostatak = float.Parse(textBoxDano.Text) - sum;
                 MessageBox.Show("Vrati ostatak od " + ostatak + "€");
-                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "Gotovina");
+                _transakcijaStore.DodajTransakciju(sum, djelatnikUse, "Gotovina");
             }
             else
             {
                 MessageBox.Show("Odabrali ste plaćanje karticom.");
-                _transakcijaStore.dodajTransakciju(sum, djelatnikUse, "Kartica");
+                _transakcijaStore.DodajTransakciju(sum, djelatnikUse, "Kartica");
             }
             foreach (Proizvod proizvod1 in kosarica)
             {
@@ -292,14 +293,14 @@ namespace Budić_Marković_RacPrakt_Projekt
                 proizvodUpdate = _proizvodStore.getProizvod(proizvod1.ID);
                 int kolicina = Convert.ToInt32(proizvodUpdate.Kolicina) - 1;
                 proizvodUpdate.Kolicina = kolicina.ToString();
-                _proizvodStore.AzurirajProizvod(proizvodUpdate);
+                _proizvodStore.AzurirajProizvod(proizvodUpdate,kolicina);
 
             }
             kosarica.Clear();
             listBoxKosarica.Items.Clear();
             textBoxDano.Text = "0";
             lbCijena.Text = "0";
-            dgPromet.DataSource = _transakcijaStore.getTransakcije();
+            dgPromet.DataSource = _transakcijaStore.GetTransakcije();
             dgSkladiste.DataSource = _proizvodStore.getProizvods();
 
 

@@ -333,9 +333,9 @@
             // btnIspisiRacun
             // 
             this.btnIspisiRacun.BackColor = System.Drawing.Color.OldLace;
-            this.btnIspisiRacun.Location = new System.Drawing.Point(656, 265);
+            this.btnIspisiRacun.Location = new System.Drawing.Point(645, 265);
             this.btnIspisiRacun.Name = "btnIspisiRacun";
-            this.btnIspisiRacun.Size = new System.Drawing.Size(126, 36);
+            this.btnIspisiRacun.Size = new System.Drawing.Size(137, 36);
             this.btnIspisiRacun.TabIndex = 28;
             this.btnIspisiRacun.Text = "Ispiši račun";
             this.btnIspisiRacun.UseVisualStyleBackColor = false;
@@ -369,7 +369,7 @@
             this.btnProizvod12.Name = "btnProizvod12";
             this.btnProizvod12.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod12.TabIndex = 23;
-            this.btnProizvod12.Text = "Salata";
+            this.btnProizvod12.Text = "Salata - Iceberg";
             this.btnProizvod12.UseVisualStyleBackColor = false;
             // 
             // btnProizvod11
@@ -453,7 +453,7 @@
             this.btnProizvod6.Name = "btnProizvod6";
             this.btnProizvod6.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod6.TabIndex = 17;
-            this.btnProizvod6.Text = "Mlijeko 1L";
+            this.btnProizvod6.Text = "Jaja 10 kom.";
             this.btnProizvod6.UseVisualStyleBackColor = false;
             // 
             // btnProizvod5
@@ -467,7 +467,7 @@
             this.btnProizvod5.Name = "btnProizvod5";
             this.btnProizvod5.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod5.TabIndex = 16;
-            this.btnProizvod5.Text = "Lazanje";
+            this.btnProizvod5.Text = "Haribo";
             this.btnProizvod5.UseVisualStyleBackColor = false;
             // 
             // btnProizvod4
@@ -481,7 +481,7 @@
             this.btnProizvod4.Name = "btnProizvod4";
             this.btnProizvod4.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod4.TabIndex = 15;
-            this.btnProizvod4.Text = "Haribo";
+            this.btnProizvod4.Text = "Coca-Cola 1l";
             this.btnProizvod4.UseVisualStyleBackColor = false;
             // 
             // btnProizvod3
@@ -495,7 +495,7 @@
             this.btnProizvod3.Name = "btnProizvod3";
             this.btnProizvod3.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod3.TabIndex = 14;
-            this.btnProizvod3.Text = "Coca-cola 0.33l";
+            this.btnProizvod3.Text = "Čokolada";
             this.btnProizvod3.UseVisualStyleBackColor = false;
             // 
             // btnProizvod2
@@ -509,7 +509,7 @@
             this.btnProizvod2.Name = "btnProizvod2";
             this.btnProizvod2.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod2.TabIndex = 13;
-            this.btnProizvod2.Text = "Coca-cola 1L";
+            this.btnProizvod2.Text = "Lazanje 0.5kg";
             this.btnProizvod2.UseVisualStyleBackColor = false;
             // 
             // btnProizvod1
@@ -523,7 +523,7 @@
             this.btnProizvod1.Name = "btnProizvod1";
             this.btnProizvod1.Size = new System.Drawing.Size(96, 71);
             this.btnProizvod1.TabIndex = 12;
-            this.btnProizvod1.Text = "Čokolada";
+            this.btnProizvod1.Text = "Mlijeko 1l";
             this.btnProizvod1.UseVisualStyleBackColor = false;
             this.btnProizvod1.Click += new System.EventHandler(this.btnProizvod1_Click);
             // 

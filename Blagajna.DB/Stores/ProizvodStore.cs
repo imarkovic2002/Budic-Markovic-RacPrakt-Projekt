@@ -13,6 +13,7 @@ namespace Blagajna.DB.Stores
 {
     public class ProizvodStore
     {
+
         public List<Proizvod> getProizvods()
         {
             var connectionManager = new SqlConnectionFactory();
@@ -128,7 +129,7 @@ namespace Blagajna.DB.Stores
             }
         }
 
-        public void AzurirajProizvod(Proizvod proizvod)
+        public void AzurirajProizvod(Proizvod proizvod,int kategorijaID)
         {
             var connectionManager = new SqlConnectionFactory();
 
@@ -136,7 +137,7 @@ namespace Blagajna.DB.Stores
             {
                 if (connection != null)
                 {
-                    string upit = "UPDATE proizvod SET naziv = @Naziv, cijena = @Cijena, kolicina = @Kolicina WHERE id = @Id";
+                    string upit = "UPDATE proizvod SET naziv = @Naziv, cijena = @Cijena, kolicina = @Kolicina, kategorija_id = @KategorijaID  WHERE id = @Id";
 
                     using (var command = new MySqlCommand(upit, connection))
                     {
@@ -144,6 +145,7 @@ namespace Blagajna.DB.Stores
                         command.Parameters.AddWithValue("@Naziv", proizvod.Naziv);
                         command.Parameters.AddWithValue("@Cijena", proizvod.Cijena);
                         command.Parameters.AddWithValue("@Kolicina", proizvod.Kolicina);
+                        command.Parameters.AddWithValue("@KategorijaID", kategorijaID);
 
                         command.ExecuteNonQuery();
                     }
@@ -166,12 +168,10 @@ namespace Blagajna.DB.Stores
                     {
                         command.Parameters.AddWithValue("@Id", proizvod_id);
 
-                        // You should use ExecuteScalar to retrieve a single value (in this case, the image)
                         var imageData = command.ExecuteScalar() as byte[];
 
                         if (imageData != null)
                         {
-                            // Convert the byte array to an Image
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
                                 return Image.FromStream(ms);
