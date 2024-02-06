@@ -70,6 +70,11 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }        
 }
 

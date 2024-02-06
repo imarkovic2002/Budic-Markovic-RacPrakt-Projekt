@@ -164,6 +164,7 @@
             this.Name = "AddEditProizvodForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddEditProizvodForm";
+            this.Load += new System.EventHandler(this.AddEditProizvodForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

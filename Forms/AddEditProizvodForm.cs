@@ -79,5 +79,10 @@ namespace Budić_Marković_RacPrakt_Projekt.Forms
         {
             this.Close(); 
         }
+
+        private void AddEditProizvodForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
