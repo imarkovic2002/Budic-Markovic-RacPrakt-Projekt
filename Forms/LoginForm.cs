@@ -26,7 +26,7 @@ namespace Budić_Marković_RacPrakt_Projekt
 
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-           
+
             using (MySqlConnection connection = connectionFactory.GetNewConnection())
             {
                 string query = "SELECT * FROM djelatnik WHERE email = @username AND lozinka = @Password";
@@ -34,41 +34,40 @@ namespace Budić_Marković_RacPrakt_Projekt
                 {
                     command.Parameters.AddWithValue("@Username", username);
                     command.Parameters.AddWithValue("@Password", password);
-                   
+
                     using (var reader = command.ExecuteReader())
                     {
 
-                        while (reader.Read())
+
+
+
+                        if (reader.Read())
                         {
-                           
+                            djelatnik.ID = reader.GetInt32("id");
+                            djelatnik.Ime = reader.GetString("ime");
+                            djelatnik.Prezime = reader.GetString("prezime");
+                            djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
+                            djelatnik.OIB = reader.GetString("oib");
+                            djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
+                            djelatnik.Email = reader.GetString("email");
+                            djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
+                            djelatnik.Role = reader.GetString("role");
+                            djelatnik.Lozinka = reader.GetString("lozinka");
+                            this.DialogResult = DialogResult.OK;
 
-                            if (reader != null)
-                            {
-                                djelatnik.ID = reader.GetInt32("id");
-                                djelatnik.Ime = reader.GetString("ime");
-                                djelatnik.Prezime = reader.GetString("prezime");
-                                djelatnik.DatumRodjenja = reader.GetDateTime("datum_rodjenja");
-                                djelatnik.OIB = reader.GetString("oib");
-                                djelatnik.BrojMobitela = reader.GetString("broj_mobitela");
-                                djelatnik.Email = reader.GetString("email");
-                                djelatnik.DatumZaposlenja = reader.GetDateTime("datum_zaposlenja");
-                                djelatnik.Role = reader.GetString("role");
-                                djelatnik.Lozinka= reader.GetString("lozinka");
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("Pogrešno korisničko ime ili lozinka.");
-                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pogrešno korisničko ime ili lozinka.");
+                            txtUsername.Text = "";
+                            txtUsername.Focus();
+                            txtPassword.Text = "";
+                            txtPassword.Focus();
+                            return;
                         }
                     }
                 }
             }
-           
-            this.DialogResult=DialogResult.OK;
-            
-
-            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
